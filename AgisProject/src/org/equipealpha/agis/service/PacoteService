@@ -1,0 +1,1 @@
+Classes que contém regras de negócio do sistema : ClienteService possui o método validar o CPF, do cliente cadastrado.
