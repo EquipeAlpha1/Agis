@@ -1,5 +1,6 @@
 package org.equipealpha.agis.model;
 
+import java.time.LocalDate;
 import java.util.LinkedList;
 import java.lang.String;
 
@@ -23,5 +24,6 @@ public class Turma {
         for(Aluno aluno: alunos){
             if (aluno.getEntrega().getDataEntrega(entrega))alunoDevedor.add(aluno);
         }
+        return alunoDevedor;
     }
 }
