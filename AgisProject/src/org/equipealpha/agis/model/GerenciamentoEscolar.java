@@ -11,4 +11,6 @@ public class GerenciamentoEscolar {
     public void cadastrarTurma(Turma turma){
         turmas.add(turma);
     }
+    private String professor;
+
 }

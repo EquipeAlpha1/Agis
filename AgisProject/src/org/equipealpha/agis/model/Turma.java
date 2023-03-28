@@ -18,12 +18,4 @@ public class Turma {
 
     public void cadastrarAtividade(Atividade ativ){atividades.add(ativ);
     }
-
-    public LinkedList<Aluno> buscaAlunoDevedor(Aluno entrega){
-        LinkedList<Aluno> alunoDevedor = new LinkedList<Aluno>();
-        for(Aluno aluno: alunos){
-            if (aluno.getEntrega().getDataEntrega(entrega))alunoDevedor.add(aluno);
-        }
-        return alunoDevedor;
-    }
 }

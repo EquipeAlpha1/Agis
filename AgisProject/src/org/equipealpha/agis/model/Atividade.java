@@ -8,7 +8,7 @@ public class Atividade {
 
     private LocalDate dataEntrega;
 
-    public boolean getDataEntrega(Aluno entrega) {
+    public LocalDate getDataEntrega(Aluno entrega) {
         return dataEntrega;
     }
 

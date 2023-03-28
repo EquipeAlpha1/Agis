@@ -1,5 +1,6 @@
 package org.equipealpha.agis.model;
 
+import java.time.LocalDate;
 import java.util.LinkedList;
 
 public class Aluno {
@@ -7,6 +8,7 @@ public class Aluno {
     private String nome;
     private int idAluno;
     private String turma;
+    private Atividade entrega;
 
     public Atividade getEntrega() {
         return entrega;
@@ -16,6 +18,7 @@ public class Aluno {
         this.entrega = entrega;
     }
 
-    private Atividade entrega;
     private LinkedList<Atividade> atividades = new LinkedList<>();
+
+
 }
