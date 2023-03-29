@@ -15,7 +15,11 @@
 #### [Linked](https://www.linkedin.com/in/gustavo-comparotto-minamisako-73a98b250/)![logo-linkedin-1](https://user-images.githubusercontent.com/111616660/190717125-207d0f20-03ef-41db-92c3-c5cb2656669e.jpg) [Github](https://github.com/guscomparotto)![logo-github-1](https://user-images.githubusercontent.com/111616660/190719341-f501098e-ce0b-45c1-b17a-7cde552df02e.png)
 
 
-* Pedro Henrique Davi Gonçalves (Dev team)
+Ian Porto Dias da Silva (Dev Team)
+### [Github](https://github.com/Ianportods)![logo-github-1](https://user-images.githubusercontent.com/111616660/190719341-f501098e-ce0b-45c1-b17a-7cde552df02e.png)
+
+
+* Pedro Henrique Davi Gonçalves (Dev Team)
 #### [Linked](https://www.linkedin.com/in/pedro-davi-jobs/)![logo-linkedin-1](https://user-images.githubusercontent.com/111616660/190717125-207d0f20-03ef-41db-92c3-c5cb2656669e.jpg) [Github](https://github.com/PedrohDavi)![logo-github-1](https://user-images.githubusercontent.com/111616660/190719341-f501098e-ce0b-45c1-b17a-7cde552df02e.png)
 
 
@@ -26,10 +30,8 @@
 ## Índice
 * [Objetivo do Projeto](#objetivo-do-projeto)
 * [Backlog Total](#backlog-total)
-* [Backlog Sprint 4](#backlog-sprint-4)
+* [Backlog Sprint 1](#backlog-sprint-1)
 * [Tecnologias e ferramentas utilizadas](#tecnologias-e-ferramentas)
-* [App do Projeto](#app-do-projeto)
-* [Software em funcionamento](#software-em-funcionamento)
 * [Agradecimentos](#agradecimentos)
 
 
@@ -45,10 +47,21 @@ O projeto Agis é uma ferramenta desktop que tem como objetivo auxiliar professo
 
 | US | Estimativa de esforço | Critério de aceitação |
 |:--------------:  | :----------:|:---------------------------------:|
-| Interfaces de pendências  |  |  |
-| Extensão da interface de pendências |  |  |
-| Interface de cadastro de atividades |  |  |
 | Modelagem de dados do cadastro de alunos e atividade do calendário  |  |  |
-| UML do projeto |  |  |
+| UML inicial do projeto |  |  |
 | Prototipação das interfaces|  |  |
 | Estruturar em pacotes o projeto em Java |  |  |
+| Implementação do banco de dados  |  |  |
+
+
+## Tecnologias e ferramentas
+* Java;
+* MySQL;
+* Astah;
+* Figma;
+* Jira;
+* Intellij IDEA.
+
+
+## Agradecimentos
+Agradecemos pelo corpo docente da Fatec-SJC, que nos auxiliou no trabalho com as tecnologias envolvidas no projeto e também com a disponibilidade dos laborátórios para utilização dos computadores.
