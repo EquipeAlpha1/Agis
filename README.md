@@ -4,23 +4,22 @@
 
 
 * Natanael Silva Machado (Scrum Master)
-#### [Linked](https://www.linkedin.com/in/natanael-silva-machado-207508250/)![logo-linkedin-1](https://user-images.githubusercontent.com/111616660/190717125-207d0f20-03ef-41db-92c3-c5cb2656669e.jpg) [Github](https://github.com/NatanaelSM)![logo-github-1](https://user-images.githubusercontent.com/111616660/190719341-f501098e-ce0b-45c1-b17a-7cde552df02e.png)
-
+#### <a href="https://www.linkedin.com/in/natanael-machado-207508250/"><img src="https://img.icons8.com/fluency/48/null/linkedin-circled.png"/></a>  <a href="https://github.com/NatanaelSM"><img src="https://img.icons8.com/fluency-systems-filled/48/null/github.png"/>
 
 * Nilber Nick Barbosa de Siqueira (Product Owner)
-#### [Linked](https://www.linkedin.com/mwlite/in/nilber-siqueira-b3404a176)![logo-linkedin-1](https://user-images.githubusercontent.com/111616660/190717125-207d0f20-03ef-41db-92c3-c5cb2656669e.jpg) [Github](https://github.com/NilberSiqueira)![logo-github-1](https://user-images.githubusercontent.com/111616660/190719341-f501098e-ce0b-45c1-b17a-7cde552df02e.png)
+#### <a href="https://www.linkedin.com/mwlite/in/nilber-siqueira-b3404a176"><img src="https://img.icons8.com/fluency/48/null/linkedin-circled.png"/></a>  <a href=" https://github.com/NilberSiqueira"><img src="https://img.icons8.com/fluency-systems-filled/48/null/github.png"/>
 
 
 * Gustavo Comparotto Minamisako (Dev Team)
-#### [Linked](https://www.linkedin.com/in/gustavo-comparotto-minamisako-73a98b250/)![logo-linkedin-1](https://user-images.githubusercontent.com/111616660/190717125-207d0f20-03ef-41db-92c3-c5cb2656669e.jpg) [Github](https://github.com/guscomparotto)![logo-github-1](https://user-images.githubusercontent.com/111616660/190719341-f501098e-ce0b-45c1-b17a-7cde552df02e.png)
+#### <a href="https://www.linkedin.com/in/gustavo-comparotto-minamisako-73a98b250/"><img src="https://img.icons8.com/fluency/48/null/linkedin-circled.png"/></a>  <a href="https://github.com/guscomparotto"><img src="https://img.icons8.com/fluency-systems-filled/48/null/github.png"/>
 
 
-Ian Porto Dias da Silva (Dev Team)
-#### [Linked](https://www.linkedin.com/in/ian-porto-ds/)![logo-linkedin-1](https://user-images.githubusercontent.com/111616660/190717125-207d0f20-03ef-41db-92c3-c5cb2656669e.jpg) [Github](https://github.com/Ianportods)![logo-github-1](https://user-images.githubusercontent.com/111616660/190719341-f501098e-ce0b-45c1-b17a-7cde552df02e.png)
+* Ian Porto Dias da Silva (Dev Team)
+#### <a href="https://www.linkedin.com/in/ian-porto-ds/"><img src="https://img.icons8.com/fluency/48/null/linkedin-circled.png"/></a>  <a href="https://github.com/Ianportods"><img src="https://img.icons8.com/fluency-systems-filled/48/null/github.png"/>
 
 
 * Pedro Henrique Davi Gonçalves (Dev Team)
-#### [Linked](https://www.linkedin.com/in/pedro-davi-jobs/)![logo-linkedin-1](https://user-images.githubusercontent.com/111616660/190717125-207d0f20-03ef-41db-92c3-c5cb2656669e.jpg) [Github](https://github.com/PedrohDavi)![logo-github-1](https://user-images.githubusercontent.com/111616660/190719341-f501098e-ce0b-45c1-b17a-7cde552df02e.png)
+#### <a href="https://www.linkedin.com/in/pedro-davi-jobs/"><img src="https://img.icons8.com/fluency/48/null/linkedin-circled.png"/></a>  <a href="https://github.com/PedrohDavi"><img src="https://img.icons8.com/fluency-systems-filled/48/null/github.png"/>
 
 
 ### Disciplina Focal Point: Sistemas de Informação
@@ -42,6 +41,7 @@ O projeto Agis é uma ferramenta desktop que tem como objetivo auxiliar professo
 
 ## Backlog total
 
+![Backlog total](https://user-images.githubusercontent.com/111358479/228885551-34260542-a8b2-4ccf-9ae7-f5c0d132d695.png)
 
 
 ## Backlog Sprint 1
@@ -56,7 +56,6 @@ O projeto Agis é uma ferramenta desktop que tem como objetivo auxiliar professo
 
 
 ## Burndown
-
 
 
 
