@@ -16,7 +16,7 @@
 
 
 Ian Porto Dias da Silva (Dev Team)
-### [Github](https://github.com/Ianportods)![logo-github-1](https://user-images.githubusercontent.com/111616660/190719341-f501098e-ce0b-45c1-b17a-7cde552df02e.png)
+### [Linked](https://www.linkedin.com/in/ian-porto-ds/)![logo-linkedin-1](https://user-images.githubusercontent.com/111616660/190717125-207d0f20-03ef-41db-92c3-c5cb2656669e.jpg) [Github](https://github.com/Ianportods)![logo-github-1](https://user-images.githubusercontent.com/111616660/190719341-f501098e-ce0b-45c1-b17a-7cde552df02e.png)
 
 
 * Pedro Henrique Davi Gonçalves (Dev Team)
