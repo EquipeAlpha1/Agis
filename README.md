@@ -1,10 +1,10 @@
-# Agis
+# Projeto Agis
 
-## Dev team
+## Equipe
 
 
 * Natanael Silva Machado (Scrum Master)
-#### <a href="https://www.linkedin.com/in/natanael-machado-207508250/"><img src="https://img.icons8.com/fluency/48/null/linkedin-circled.png"/></a>  <a href="https://github.com/NatanaelSM"><img src="https://img.icons8.com/fluency-systems-filled/48/null/github.png"/>
+#### <a href="https://www.linkedin.com/in/natanael-machado-796841270/"><img src="https://img.icons8.com/fluency/48/null/linkedin-circled.png"/></a>  <a href="https://github.com/NatanaelSM"><img src="https://img.icons8.com/fluency-systems-filled/48/null/github.png"/>
 
 * Nilber Nick Barbosa de Siqueira (Product Owner)
 #### <a href="https://www.linkedin.com/mwlite/in/nilber-siqueira-b3404a176"><img src="https://img.icons8.com/fluency/48/null/linkedin-circled.png"/></a>  <a href=" https://github.com/NilberSiqueira"><img src="https://img.icons8.com/fluency-systems-filled/48/null/github.png"/>
@@ -48,11 +48,11 @@ O projeto Agis é uma ferramenta desktop que tem como objetivo auxiliar professo
 
 | US | Estimativa de esforço | Critério de aceitação |
 |:--------------:  | :----------:|:---------------------------------:|
-| Modelagem de dados do cadastro de alunos e atividade do calendário  |  |  |
-| UML inicial do projeto |  |  |
-| Prototipação das interfaces|  |  |
-| Estruturar em pacotes o projeto em Java |  |  |
-| Implementação do banco de dados  |  |  |
+| Modelagem de dados do cadastro de alunos e atividade do calendário  | 8 | Fazer a modelagem do banco de dados que será usado posteriormente, colocando todas as entidades e relacionamentos |
+| UML inicial do projeto | 8 | Representar o diagrama de classes do projeto como um todo |
+| Prototipação das interfaces| 8 | Prototipar todas as interfaces que serão realizadas na próxima sprint |
+| Estruturar em pacotes o projeto em Java | 3 | Criar todos os pacotes necessários para melhor organização do projeto |
+| Documentação | 4 | Documentar todo o processo utilizado para a primeira sprint |
 
 
 ## Burndown
@@ -69,4 +69,4 @@ O projeto Agis é uma ferramenta desktop que tem como objetivo auxiliar professo
 
 
 ## Agradecimentos
-Agradecemos pelo corpo docente da Fatec-SJC, que nos auxiliou no trabalho com as tecnologias envolvidas no projeto e também com a disponibilidade dos laborátórios para utilização dos computadores.
+Agradecemos o corpo docente da Fatec-SJC que nos auxiliaram a realização desse projeto, em especial ao Prof. Cláudio Etelvino de Lima e ao Prof. Giuliano Araujo Bertoti, que nos deram todo o feedback e apoio necessário durante todo o processo de realização do programa.
