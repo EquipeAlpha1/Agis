@@ -52,7 +52,7 @@ O projeto Agis é uma ferramenta desktop que tem como objetivo auxiliar professo
 | UML inicial do projeto | 8 | Representar o diagrama de classes do projeto como um todo |
 | Prototipação das interfaces| 8 | Prototipar todas as interfaces que serão realizadas na próxima sprint |
 | Estruturar em pacotes o projeto em Java | 3 | Criar todos os pacotes necessários para melhor organização do projeto |
-| Documentação | 4 | Documentar todo o processo utilizado para a primeira sprint |
+| Documentação | 5 | Documentar todo o processo utilizado para a primeira sprint |
 
 
 ## Burndown
