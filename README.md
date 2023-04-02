@@ -7,7 +7,7 @@
 #### <a href="https://www.linkedin.com/in/natanael-machado-796841270/"><img src="https://img.icons8.com/fluency/48/null/linkedin-circled.png"/></a>  <a href="https://github.com/NatanaelSM"><img src="https://img.icons8.com/fluency-systems-filled/48/null/github.png"/>
 
 * Nilber Nick Barbosa de Siqueira (Product Owner)
-#### <a href="https://www.linkedin.com/mwlite/in/nilber-siqueira-b3404a176"><img src="https://img.icons8.com/fluency/48/null/linkedin-circled.png"/></a>  <a href=" https://github.com/NilberSiqueira"><img src="https://img.icons8.com/fluency-systems-filled/48/null/github.png"/>
+#### <a href="https://www.linkedin.com/mwlite/in/nilber-siqueira-b3404a176"><img src="https://img.icons8.com/fluency/48/null/linkedin-circled.png"/></a>  <a href="https://github.com/NilberSiqueira"><img src="https://img.icons8.com/fluency-systems-filled/48/null/github.png"/>
 
 
 * Gustavo Comparotto Minamisako (Dev Team)
