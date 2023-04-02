@@ -57,6 +57,7 @@ O projeto Agis é uma ferramenta desktop que tem como objetivo auxiliar professo
 
 ## Burndown
 
+![image](https://user-images.githubusercontent.com/111640323/229324033-46980b46-cc4d-458f-bab7-101bb351f1d4.png)
 
 
 ## Tecnologias e ferramentas
