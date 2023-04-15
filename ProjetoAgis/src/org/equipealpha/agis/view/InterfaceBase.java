@@ -33,7 +33,7 @@ public class InterfaceBase extends JFrame implements ActionListener {
         super();
 
         //Customizando o painel da sidebar
-        sidebar = new JPanel();
+        sidebar = new JPanel(); 
         sidebar.setPreferredSize(new Dimension(240,700));
         sidebar.setLayout(null);
         sidebar.setBackground(new Color(76, 84, 103));
@@ -41,11 +41,10 @@ public class InterfaceBase extends JFrame implements ActionListener {
 
         //Customizando os itens da sidebar
         painelTituloSidebar = new JPanel();
-        painelTituloSidebar.setBackground(Color.CYAN);
-        painelTituloSidebar.setPreferredSize(new Dimension(240,100));
-        sidebar.add(painelTituloSidebar);
+        
 
 
+        //area do conteudo
         conteudo = new JPanel();
         conteudo.setPreferredSize(new Dimension(750,700));
         conteudo.setBackground(Color.MAGENTA);
