@@ -2,69 +2,68 @@ package org.equipealpha.agis.view;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import javax.swing.*;
 import java.awt.event.ActionListener;
+import javax.swing.*;
 
-public class InterfaceBase extends JFrame implements ActionListener {
-    
+
+public abstract class InterfaceBase extends JFrame implements ActionListener {
+
     //paineis
-    private JPanel sidebar;
-    private JPanel painelTituloSidebar;
-    private JPanel painelPendenciasSidebar;
-    private JPanel painelAtividadesSidebar;
-    private JPanel painelCadastroSidebar;
-    private JPanel painelEstatisticasTurmaSidebar;
-    private JPanel conteudo;
+    protected JPanel sidebar;
+    protected JPanel painelTituloSidebar;
+    protected JPanel painelPendenciasSidebar;
+    protected JPanel painelAtividadesSidebar;
+    protected JPanel painelCadastroSidebar;
+    protected JPanel painelEstatisticasTurmaSidebar;
+    protected JPanel conteudo;
+    protected JPanel painelBtnPendencias;
     //labels
-    private JLabel tituloSidebar;
-    private JLabel labelLogo;
-    private JLabel labelImgPendencias;
+    protected JLabel tituloSidebar;
+    protected JLabel labelLogo;
+    protected JLabel labelImgPendencias;
     //imagens
-    private ImageIcon logo;
-    private ImageIcon imgPendenciasSidebar;
-    private ImageIcon imgAtividadesSidebar;
-    private ImageIcon imgCadastroSidebar;
-    private ImageIcon imgEstatisticasTurmaSidebar;
+    protected ImageIcon imgLogo;
+    protected ImageIcon imgPendenciasSidebar;
+    protected ImageIcon imgAtividadesSidebar;
+    protected ImageIcon imgCadastroSidebar;
+    protected ImageIcon imgEstatisticasTurmaSidebar;
     //botoes
-    private JButton btnPendenciasSidebar;
+    protected JButton btnPendenciasSidebar;
     //outros
-    
-    public InterfaceBase(){
+
+    InterfaceBase() {
         super();
 
         //Customizando o painel da sidebar
-        sidebar = new JPanel(); 
+        sidebar = new JPanel();
         sidebar.setPreferredSize(new Dimension(240,700));
         sidebar.setLayout(null);
-        sidebar.setBackground(new Color(76, 84, 103));
+        sidebar.setBackground(new Color(200, 206, 227));
 
 
-        //Customizando os itens da sidebar
-        painelTituloSidebar = new JPanel();
-        
-
-
-        //area do conteudo
+        //customizando os itens da sidebar
         conteudo = new JPanel();
         conteudo.setPreferredSize(new Dimension(750,700));
-        conteudo.setBackground(Color.MAGENTA);
 
 
-        //Customizando o frame
+
+        //Customização do frame
         setSize(1000,700);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
         setTitle("Projeto Agis");
         setLocationRelativeTo(null);
-        setLayout(new BorderLayout(10,0));
+        setLayout(new BorderLayout(0,0));
         setLocationRelativeTo(null);
         add(sidebar, BorderLayout.WEST);
         add(conteudo, BorderLayout.CENTER);
         setVisible(true);
     }
 
+    protected abstract void addConteudo();
+
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        }
+    }
 }
