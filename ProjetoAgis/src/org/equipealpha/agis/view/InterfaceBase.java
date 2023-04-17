@@ -37,7 +37,7 @@ public abstract class InterfaceBase extends JFrame implements ActionListener {
         //Customizando o painel da sidebar
         sidebar = new JPanel();
         sidebar.setPreferredSize(new Dimension(240,700));
-        sidebar.setLayout(null);
+        sidebar.setLayout(new BoxLayout(sidebar, BoxLayout.Y_AXIS));
         sidebar.setBackground(new Color(200, 206, 227));
 
 
