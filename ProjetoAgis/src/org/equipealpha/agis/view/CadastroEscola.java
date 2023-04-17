@@ -14,9 +14,9 @@ import java.awt.*;
 public class CadastroEscola extends InterfaceBase{
     
     private JLabel txtCadastro;
-    CadastroEscola(){super();}
+    public CadastroEscola(){super();}
 
-    @Override
+    
     protected void addconteudo() {
 
         txtCadastro = new JLabel();
@@ -29,5 +29,10 @@ public class CadastroEscola extends InterfaceBase{
 
         conteudo.add(txtCadastro);
 
+    }
+
+    @Override
+    protected void addConteudo() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
