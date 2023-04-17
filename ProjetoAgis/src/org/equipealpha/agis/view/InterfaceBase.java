@@ -41,6 +41,8 @@ public abstract class InterfaceBase extends JFrame implements ActionListener {
         sidebar.setBackground(new Color(200, 206, 227));
         
         painelTituloSidebar = new JPanel();
+        
+        painelPendenciasSidebar = new JPanel();
 
 
         //customizando os itens da sidebar
