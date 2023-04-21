@@ -3,13 +3,10 @@
 
 package org.equipealpha.agis.view;
 
-import java.awt.*;
 import javax.swing.*;
 
 
 public class InterfaceTeste extends InterfaceBase{
-
-    private JButton botao;
 
     public InterfaceTeste() {
         addConteudo();
@@ -18,11 +15,6 @@ public class InterfaceTeste extends InterfaceBase{
     
     @Override
     public void addConteudo() {
-        botao = new JButton("Ola");
-        botao.setSize(100,50);
-        botao.setLocation(10,10);
-        botao.setBackground(Color.RED);
-        conteudo.add(botao);
         
     }
     
