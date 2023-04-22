@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.net.URL;
 import javax.swing.*;
 
 
@@ -34,6 +35,12 @@ public abstract class InterfaceBase extends JFrame implements ActionListener {
 //outros
     protected GradientPanel degradeconteudo;
     protected JComboBox opcoesCadastro;
+    protected URL urlLogo;
+    protected URL urlLogoCompleto;
+    protected URL urlPendencias;
+    protected URL urlEstatisticas;
+    protected URL urlCadastro;
+
 
     InterfaceBase() {
         super();
@@ -49,8 +56,8 @@ public abstract class InterfaceBase extends JFrame implements ActionListener {
         painelTituloSidebar.setBackground(Color.white);
         painelTituloSidebar.setMaximumSize(new Dimension(250,100));
         painelTituloSidebar.setLayout(new FlowLayout(FlowLayout.CENTER,0,0));
-        imgLogoCompleto = new ImageIcon("C:/Users/natan/OneDrive/Área de Trabalho"
-                + "/Faculdade/API/Agis/ProjetoAgis/src/org/equipealpha/agis/resources/logoCompleto.png");
+        urlLogoCompleto = ClassLoader.getSystemResource("org/equipealpha/agis/resources/logoCompleto.png");
+        imgLogoCompleto = new ImageIcon(urlLogoCompleto);
         labelLogo = new JLabel();
         labelLogo.setIcon(imgLogoCompleto);
         painelTituloSidebar.add(labelLogo);
@@ -63,11 +70,10 @@ public abstract class InterfaceBase extends JFrame implements ActionListener {
         painelPendenciasSidebar.setBackground(Color.white);
         sidebar.add(Box.createRigidArea(new Dimension(0,30)));
         painelPendenciasSidebar.setLayout(new FlowLayout(FlowLayout.LEFT, 10,0));
-        imgPendenciasSidebar = new ImageIcon("C:/Users/natan/OneDrive/Área de Trabalho"
-                + "/Faculdade/API/Agis/ProjetoAgis/src/org/equipealpha/agis/resources/pendencias.png");
+        urlPendencias = ClassLoader.getSystemResource("org/equipealpha/agis/resources/pendencias.png");
+        imgPendenciasSidebar = new ImageIcon (urlPendencias);
         labelImgPendencias = new JLabel();
         labelImgPendencias.setIcon(imgPendenciasSidebar);
-
         labelTextoPendencias = new JLabel("Pendências");
         labelTextoPendencias.setFont(new Font(" Courier New", Font.PLAIN,17));
         labelTextoPendencias.addMouseListener(new MouseAdapter() {
@@ -88,8 +94,8 @@ public abstract class InterfaceBase extends JFrame implements ActionListener {
         painelCadastroSidebar.setBackground(Color.white);
         sidebar.add(Box.createRigidArea(new Dimension(0,50)));
         painelCadastroSidebar.setLayout(new FlowLayout(FlowLayout.LEFT, 10,0));
-        imgCadastroSidebar = new ImageIcon ("C:/Users/natan/OneDrive/Área de Trabalho"
-                + "/Faculdade/API/Agis/ProjetoAgis/src/org/equipealpha/agis/resources/cadastro.png");
+        urlCadastro = ClassLoader.getSystemResource("org/equipealpha/agis/resources/cadastro.png");
+        imgCadastroSidebar = new ImageIcon (urlCadastro);
         labelImgCadastro = new JLabel();
         labelImgCadastro.setIcon(imgCadastroSidebar);
         labelTextoCadastro = new JLabel("Cadastrar");
@@ -113,15 +119,15 @@ public abstract class InterfaceBase extends JFrame implements ActionListener {
         painelEstatisticasTurmaSidebar.setBackground(Color.white);
         sidebar.add(Box.createRigidArea(new Dimension(0,50)));
         painelEstatisticasTurmaSidebar.setLayout(new FlowLayout(FlowLayout.LEFT, 10,0));
-        imgEstatisticasTurmaSidebar = new ImageIcon("C:/Users/natan/OneDrive/Área de Trabalho"
-                + "/Faculdade/API/Agis/ProjetoAgis/src/org/equipealpha/agis/resources/estatisticas.png");
+        urlEstatisticas = ClassLoader.getSystemResource("org/equipealpha/agis/resources/estatisticas.png");
+        imgEstatisticasTurmaSidebar = new ImageIcon (urlEstatisticas);
         labelImgEstatisticas = new JLabel();
         labelImgEstatisticas.setIcon(imgEstatisticasTurmaSidebar);
         labelTextoEstatisticas= new JLabel("Estatísticas Da Turma");
         labelTextoEstatisticas.setFont(new Font(" Courier New", Font.PLAIN,17));
         labelTextoEstatisticas.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent e) {
-
+                
             }
         });
         labelTextoEstatisticas.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -142,8 +148,8 @@ public abstract class InterfaceBase extends JFrame implements ActionListener {
         setSize(1000,700);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
-        imgLogo = new ImageIcon("C:/Users/natan/OneDrive/Área de Trabalho"
-                + "/Faculdade/API/Agis/ProjetoAgis/src/org/equipealpha/agis/resources/logo.png");
+        urlLogo = ClassLoader.getSystemResource("org/equipealpha/agis/resources/logo.png");
+        imgLogo = new ImageIcon(urlLogo);
         setIconImage(imgLogo.getImage());
         setTitle("Projeto Agis");
         setLocationRelativeTo(null);
@@ -160,6 +166,7 @@ public abstract class InterfaceBase extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()==opcoesCadastro){
             if (opcoesCadastro.getSelectedItem() == "Atividade"){
+               
 
             }
             if (opcoesCadastro.getSelectedItem() == "Escola"){
