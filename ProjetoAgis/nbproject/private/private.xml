@@ -3,16 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/nilbe/OneDrive%20-%20Fatec%20Centro%20Paula%20Souza/Documents/Agis/ProjetoAgis/src/org/equipealpha/agis/view/InterfaceBase.java</file>
-            <file>file:/C:/Users/nilbe/OneDrive%20-%20Fatec%20Centro%20Paula%20Souza/Documents/Agis/ProjetoAgis/src/org/equipealpha/agis/main/Main.java</file>
-            <file>file:/C:/Users/nilbe/OneDrive%20-%20Fatec%20Centro%20Paula%20Souza/Documents/Agis/ProjetoAgis/src/org/equipealpha/agis/view/InterfaceDetalhes.java</file>
-=======
-            <file>file:/C:/Users/natan/OneDrive/Área%20de%20Trabalho/Faculdade/API/Agis/ProjetoAgis/src/org/equipealpha/agis/resources/logoCompleto.png</file>
-            <file>file:/C:/Users/natan/OneDrive/Área%20de%20Trabalho/Faculdade/API/Agis/ProjetoAgis/src/org/equipealpha/agis/view/InterfaceTeste.java</file>
-            <file>file:/C:/Users/natan/OneDrive/Área%20de%20Trabalho/Faculdade/API/Agis/ProjetoAgis/src/org/equipealpha/agis/view/InterfaceBase.java</file>
-            <file>file:/C:/Users/natan/OneDrive/Área%20de%20Trabalho/Faculdade/API/Agis/ProjetoAgis/src/org/equipealpha/agis/main/Main.java</file>
->>>>>>> 5ba8a4add36bd7c4636f9253511762d1ad33b013
+            <file>file:/C:/Users/Pedro%20Davi/OneDrive/Documentos/GitHub/Agis/ProjetoAgis/src/org/equipealpha/agis/view/CadastroTurma.java</file>
+            <file>file:/C:/Users/Pedro%20Davi/OneDrive/Documentos/GitHub/Agis/ProjetoAgis/src/org/equipealpha/agis/view/CadastroAlunoGUI.java</file>
+            <file>file:/C:/Users/Pedro%20Davi/OneDrive/Documentos/GitHub/Agis/ProjetoAgis/src/org/equipealpha/agis/view/CadastroEscola.java</file>
+            <file>file:/C:/Users/Pedro%20Davi/OneDrive/Documentos/GitHub/Agis/ProjetoAgis/src/org/equipealpha/agis/main/Main.java</file>
+            <file>file:/C:/Users/Pedro%20Davi/OneDrive/Documentos/GitHub/Agis/ProjetoAgis/src/org/equipealpha/agis/view/CadastroAluno.java</file>
+            <file>file:/C:/Users/Pedro%20Davi/OneDrive/Documentos/GitHub/Agis/ProjetoAgis/src/org/equipealpha/agis/view/InterfaceBase.java</file>
+            <file>file:/C:/Users/Pedro%20Davi/OneDrive/Documentos/GitHub/Agis/ProjetoAgis/src/org/equipealpha/agis/view/CadastroTurmaGUI.java</file>
         </group>
     </open-files>
 </project-private>

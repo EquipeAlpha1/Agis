@@ -37,7 +37,6 @@ public class CadastroTurmaGUI extends javax.swing.JFrame {
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("CADASTRO DE TURMA");
-        jLabel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         jLabel2.setText("Nome da Turma:");
 
