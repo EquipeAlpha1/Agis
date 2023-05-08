@@ -4,16 +4,13 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/natan/OneDrive/Área%20de%20Trabalho/Faculdade/API/Agis/ProjetoAgis/src/org/equipealpha/agis/view/InterfaceCadastroAtividade.java</file>
-            <file>file:/C:/Users/natan/OneDrive/Área%20de%20Trabalho/Faculdade/API/Agis/ProjetoAgis/src/org/equipealpha/agis/model/model</file>
             <file>file:/C:/Users/natan/OneDrive/Área%20de%20Trabalho/Faculdade/API/Agis/ProjetoAgis/src/org/equipealpha/agis/model/Prova.java</file>
             <file>file:/C:/Users/natan/OneDrive/Área%20de%20Trabalho/Faculdade/API/Agis/ProjetoAgis/src/org/equipealpha/agis/model/Aluno.java</file>
-            <file>file:/C:/Users/natan/OneDrive/Área%20de%20Trabalho/Faculdade/API/Agis/ProjetoAgis/src/org/equipealpha/agis/util/util</file>
             <file>file:/C:/Users/natan/OneDrive/Área%20de%20Trabalho/Faculdade/API/Agis/ProjetoAgis/src/org/equipealpha/agis/model/Trabalho.java</file>
             <file>file:/C:/Users/natan/OneDrive/Área%20de%20Trabalho/Faculdade/API/Agis/ProjetoAgis/src/org/equipealpha/agis/model/Turma.java</file>
-            <file>file:/C:/Users/natan/OneDrive/Área%20de%20Trabalho/Faculdade/API/Agis/ProjetoAgis/src/org/equipealpha/agis/model/Atividade.java</file>
+            <file>file:/C:/Users/natan/OneDrive/Área%20de%20Trabalho/Faculdade/API/Agis/ProjetoAgis/src/org/equipealpha/agis/controller/GerenciamentoEscolar.java</file>
             <file>file:/C:/Users/natan/OneDrive/Área%20de%20Trabalho/Faculdade/API/Agis/ProjetoAgis/src/org/equipealpha/agis/model/Tarefa.java</file>
             <file>file:/C:/Users/natan/OneDrive/Área%20de%20Trabalho/Faculdade/API/Agis/ProjetoAgis/src/org/equipealpha/agis/model/Escola.java</file>
-            <file>file:/C:/Users/natan/OneDrive/Área%20de%20Trabalho/Faculdade/API/Agis/ProjetoAgis/src/org/equipealpha/agis/service/service</file>
         </group>
     </open-files>
 </project-private>
