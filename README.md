@@ -1,31 +1,5 @@
 # Projeto Agis
 
-## Equipe
-
-
-* Natanael Silva Machado (Scrum Master)
-#### <a href="https://www.linkedin.com/in/natanael-machado-796841270/"><img src="https://img.icons8.com/fluency/48/null/linkedin-circled.png"/></a>  <a href="https://github.com/NatanaelSM"><img src="https://img.icons8.com/fluency-systems-filled/48/null/github.png"/>
-
-* Nilber Nick Barbosa de Siqueira (Product Owner)
-#### <a href="https://www.linkedin.com/mwlite/in/nilber-siqueira-b3404a176"><img src="https://img.icons8.com/fluency/48/null/linkedin-circled.png"/></a>  <a href="https://github.com/NilberSiqueira"><img src="https://img.icons8.com/fluency-systems-filled/48/null/github.png"/>
-
-
-* Gustavo Comparotto Minamisako (Dev Team)
-#### <a href="https://www.linkedin.com/in/gustavo-comparotto-minamisako-73a98b250/"><img src="https://img.icons8.com/fluency/48/null/linkedin-circled.png"/></a>  <a href="https://github.com/guscomparotto"><img src="https://img.icons8.com/fluency-systems-filled/48/null/github.png"/>
-
-
-* Ian Porto Dias da Silva (Dev Team)
-#### <a href="https://www.linkedin.com/in/ian-porto-ds/"><img src="https://img.icons8.com/fluency/48/null/linkedin-circled.png"/></a>  <a href="https://github.com/Ianportods"><img src="https://img.icons8.com/fluency-systems-filled/48/null/github.png"/>
-
-
-* Pedro Henrique Davi Gonçalves (Dev Team)
-#### <a href="https://www.linkedin.com/in/pedro-davi-jobs/"><img src="https://img.icons8.com/fluency/48/null/linkedin-circled.png"/></a>  <a href="https://github.com/PedrohDavi"><img src="https://img.icons8.com/fluency-systems-filled/48/null/github.png"/>
-
-
-### Disciplina Focal Point: Sistemas de Informação
-* M2 (Master dos Masters): Prof. Cláudio Etelvino de Lima
-* P2 (PO dos PO´s): Prof. Giuliano Araujo Bertoti
-
 ## Índice
 * [Objetivo do Projeto](#objetivo-do-projeto)
 * [Backlog Total](#backlog-total)
@@ -36,7 +10,7 @@
 
 
 ## Objetivo do Projeto
-O projeto Agis é uma ferramenta desktop que tem como objetivo auxiliar professores no gerenciamento escolar no que diz respeito a lançamento de atividades, tarefas e notas. Além disso, o professor também terá fácil acesso a informações sobre atividades pendentes e estatísticas sobre entregas olhando pelo ponto de vista do aluno e da turma. A aplicação busca estabelecer acessibilidade e simplicidade de uso, para que seja possível economizar tempo e mostrar dados de forma clara ao usuário.
+O projeto Agis é uma ferramenta desktop que tem como objetivo auxiliar professores no gerenciamento escolar no que diz respeito a lançamento de atividades, tarefas e notas. Além disso, o professor também terá fácil acesso a informações sobre atividades pendentes e estatísticas sobre entregas do aluno e da turma. A aplicação busca estabelecer acessibilidade e simplicidade de uso, para que assim seja possível economizar tempo e mostrar dados relevantes ao usuário.
 
 
 ## Backlog total
@@ -88,6 +62,32 @@ O projeto Agis é uma ferramenta desktop que tem como objetivo auxiliar professo
 * Jira;
 * Intellij IDEA.
 
+## Equipe
 
+
+* Natanael Silva Machado (Scrum Master)
+#### <a href="https://www.linkedin.com/in/natanael-machado-796841270/"><img src="https://img.icons8.com/fluency/48/null/linkedin-circled.png"/></a>  <a href="https://github.com/NatanaelSM"><img src="https://img.icons8.com/fluency-systems-filled/48/null/github.png"/>
+
+* Nilber Nick Barbosa de Siqueira (Product Owner)
+#### <a href="https://www.linkedin.com/mwlite/in/nilber-siqueira-b3404a176"><img src="https://img.icons8.com/fluency/48/null/linkedin-circled.png"/></a>  <a href="https://github.com/NilberSiqueira"><img src="https://img.icons8.com/fluency-systems-filled/48/null/github.png"/>
+
+
+* Gustavo Comparotto Minamisako (Dev Team)
+#### <a href="https://www.linkedin.com/in/gustavo-comparotto-minamisako-73a98b250/"><img src="https://img.icons8.com/fluency/48/null/linkedin-circled.png"/></a>  <a href="https://github.com/guscomparotto"><img src="https://img.icons8.com/fluency-systems-filled/48/null/github.png"/>
+
+
+* Ian Porto Dias da Silva (Dev Team)
+#### <a href="https://www.linkedin.com/in/ian-porto-ds/"><img src="https://img.icons8.com/fluency/48/null/linkedin-circled.png"/></a>  <a href="https://github.com/Ianportods"><img src="https://img.icons8.com/fluency-systems-filled/48/null/github.png"/>
+
+
+* Pedro Henrique Davi Gonçalves (Dev Team)
+#### <a href="https://www.linkedin.com/in/pedro-davi-jobs/"><img src="https://img.icons8.com/fluency/48/null/linkedin-circled.png"/></a>  <a href="https://github.com/PedrohDavi"><img src="https://img.icons8.com/fluency-systems-filled/48/null/github.png"/>
+
+
+## Disciplina Focal Point: Sistemas de Informação
+* M2 (Master dos Masters): Prof. Cláudio Etelvino de Lima
+* P2 (PO dos PO´s): Prof. Giuliano Araujo Bertoti
+
+  
 ## Agradecimentos
 Agradecemos o corpo docente da Fatec-SJC que nos auxiliaram a realização desse projeto, em especial ao Prof. Cláudio Etelvino de Lima e ao Prof. Giuliano Araujo Bertoti, que nos deram todo o feedback e apoio necessário durante todo o processo de realização do programa.
