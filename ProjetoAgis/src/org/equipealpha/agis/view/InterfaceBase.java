@@ -44,7 +44,6 @@ public abstract class InterfaceBase extends JFrame implements ActionListener {
 
 
     InterfaceBase() {
-        super();
         
         GerenciamentoEscolar gerenciamentoescolar = new GerenciamentoEscolar();
 
@@ -117,6 +116,9 @@ public abstract class InterfaceBase extends JFrame implements ActionListener {
         painelCadastroSidebar.add(labelTextoCadastro, BorderLayout.EAST);
         painelCadastroSidebar.add(opcoesCadastro);
         sidebar.add(painelCadastroSidebar);
+        
+        
+            
 
 
 //customizando estatisticas sidebar
@@ -134,7 +136,7 @@ public abstract class InterfaceBase extends JFrame implements ActionListener {
         labelTextoEstatisticas.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent e) {
                 setVisible(false);
-               gerenciamentoescolar.ExibirInterfaceSelectTurma();
+                gerenciamentoescolar.ExibirInterfaceSelectTurma();
                 
             }
         });
@@ -172,20 +174,31 @@ public abstract class InterfaceBase extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        GerenciamentoEscolar gerenciamentoescolar = new GerenciamentoEscolar();
+        
         if (e.getSource()==opcoesCadastro){
             if (opcoesCadastro.getSelectedItem() == "Atividade"){
-               
-
+                setVisible(false);
+                gerenciamentoescolar.ExibirCadastroAtividade();
+                
             }
             if (opcoesCadastro.getSelectedItem() == "Escola"){
-
+                setVisible(false);
+                gerenciamentoescolar.ExibirCadastroEscola();
+                
             }
             if (opcoesCadastro.getSelectedItem() == "Turma"){
+                setVisible(false);
+                gerenciamentoescolar.ExibirCadastroTurma();
 
             }
             if (opcoesCadastro.getSelectedItem() == "Aluno"){
+                setVisible(false);
+                gerenciamentoescolar.ExibirCadastroAluno();
 
             }
         }
     }
+    
+     
 }
