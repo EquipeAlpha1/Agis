@@ -7,6 +7,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.net.URL;
 import javax.swing.*;
+import org.equipealpha.agis.controller.GerenciamentoEscolar;
 
 
 public abstract class InterfaceBase extends JFrame implements ActionListener {
@@ -44,6 +45,8 @@ public abstract class InterfaceBase extends JFrame implements ActionListener {
 
     InterfaceBase() {
         super();
+        
+        GerenciamentoEscolar gerenciamentoescolar = new GerenciamentoEscolar();
 
 //Customizando o painel da sidebar
         sidebar = new JPanel();
@@ -78,6 +81,9 @@ public abstract class InterfaceBase extends JFrame implements ActionListener {
         labelTextoPendencias.setFont(new Font(" Courier New", Font.PLAIN,17));
         labelTextoPendencias.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent e) {
+                setVisible(false);
+                gerenciamentoescolar.ExibirInterfacePendencias();
+
 
             }
         });
@@ -127,6 +133,8 @@ public abstract class InterfaceBase extends JFrame implements ActionListener {
         labelTextoEstatisticas.setFont(new Font(" Courier New", Font.PLAIN,17));
         labelTextoEstatisticas.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent e) {
+                setVisible(false);
+               gerenciamentoescolar.ExibirInterfaceSelectTurma();
                 
             }
         });
