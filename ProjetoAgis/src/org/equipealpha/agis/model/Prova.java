@@ -10,4 +10,34 @@ package org.equipealpha.agis.model;
  */
 public class Prova {
     
+    private int id;
+    private int data;
+    private int nota;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getData() {
+        return data;
+    }
+
+    public void setData(int data) {
+        this.data = data;
+    }
+
+    public int getNota() {
+        return nota;
+    }
+
+    public void setNota(int nota) {
+        this.nota = nota;
+    }
+    
+    
+    
 }

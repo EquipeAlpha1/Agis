@@ -10,4 +10,24 @@ package org.equipealpha.agis.model;
  */
 public class Escola {
     
+    private int id;
+    private String escola;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getEscola() {
+        return escola;
+    }
+
+    public void setEscola(String escola) {
+        this.escola = escola;
+    }
+    
+    
 }
