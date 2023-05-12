@@ -1,43 +1,49 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package org.equipealpha.agis.model;
 
-/**
- *
- * @author natan
- */
+import java.time.LocalDate;
+
 public class Tarefa {
     
-    private int id;
-    private int data;
-    private int nota;
+    private String nome;
+    private LocalDate dataInicio;
+    private LocalDate dataFim;
+    private boolean concluido = false;
 
-    public int getId() {
-        return id;
+    public Tarefa(String nome, LocalDate dataInicio, LocalDate dataFim) {
+        this.nome = nome;
+        this.dataInicio = dataInicio;
+        this.dataFim = dataFim;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public String getNome() {
+        return nome;
     }
 
-    public int getData() {
-        return data;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public void setData(int data) {
-        this.data = data;
+    public LocalDate getDataInicio() {
+        return dataInicio;
     }
 
-    public int getNota() {
-        return nota;
+    public void setDataInicio(LocalDate dataInicio) {
+        this.dataInicio = dataInicio;
     }
 
-    public void setNota(int nota) {
-        this.nota = nota;
+    public LocalDate getDataFim() {
+        return dataFim;
     }
-    
-    
-    
+
+    public void setDataFim(LocalDate dataFim) {
+        this.dataFim = dataFim;
+    }
+
+    public boolean isConcluido() {
+        return concluido;
+    }
+
+    public void setConcluido(boolean concluido) {
+        this.concluido = concluido;
+    }
 }

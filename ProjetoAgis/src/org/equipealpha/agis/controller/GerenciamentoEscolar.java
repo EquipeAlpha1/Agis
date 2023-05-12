@@ -15,16 +15,14 @@ import org.equipealpha.agis.view.InterfacePendencias;
 import org.equipealpha.agis.view.SelectTurma;
 
 public class GerenciamentoEscolar {
-    //chamando as classes
-    SelectTurma enviarSelectTurma;
-    InterfacePendencias enviarInterfacePendencias;
-    CadastroAluno enviarCadastroAluno;
-    CadastroEscola enviarCadastroEscola;
-    CadastroTurma enviarCadastroTurma;
-    InterfaceCadastroAtividade enviarInterfaceCadastroAtividades;
     
-    
-
+    //Classes
+    private SelectTurma enviarSelectTurma;
+    private InterfacePendencias enviarInterfacePendencias;
+    private CadastroAluno enviarCadastroAluno;
+    private CadastroEscola enviarCadastroEscola;
+    private CadastroTurma enviarCadastroTurma;
+    private InterfaceCadastroAtividade enviarInterfaceCadastroAtividades;
     private ArrayList<Aluno> alunos = new ArrayList<Aluno>();
     private ArrayList<Turma> turmas = new ArrayList<Turma>();
     private ArrayList<Escola> escolas = new ArrayList<Escola>();
@@ -32,44 +30,41 @@ public class GerenciamentoEscolar {
     private ArrayList<Tarefa> tarefas = new ArrayList<Tarefa>();
     private ArrayList<Prova> provas = new ArrayList<Prova>();
 
-    
-   
-    
-    public void estatisticasTurma(){
+    //Métodos
+    public void porcentProvaRealizadas(Prova prova){
         
-    }
-
-    public void estatiticaAluno(){
-
+        if (prova.isConcluido()==true){
+            
+        }
     }
     
-    public void ExibirInterfacePendencias(){
+    public void exibirInterfacePendencias(){
         
         enviarInterfacePendencias = new InterfacePendencias();
         enviarInterfacePendencias.setVisible(true);
     }
     
-    public void ExibirInterfaceSelectTurma(){
+    public void exibirInterfaceSelectTurma(){
             enviarSelectTurma = new SelectTurma();
             enviarSelectTurma.setVisible(true);
     }
     
-    public void ExibirCadastroAluno(){
+    public void exibirCadastroAluno(){
             enviarCadastroAluno = new CadastroAluno();
             enviarCadastroAluno.setVisible(true);
     }
     
-    public void ExibirCadastroEscola(){
+    public void exibirCadastroEscola(){
         enviarCadastroEscola = new CadastroEscola();
         enviarCadastroEscola.setVisible(true);
     }
 
-      public void ExibirCadastroTurma(){
+      public void exibirCadastroTurma(){
         enviarCadastroTurma = new CadastroTurma();
         enviarCadastroTurma.setVisible(true);
     }
     
-       public void ExibirCadastroAtividade(){
+       public void exibirCadastroAtividade(){
         enviarInterfaceCadastroAtividades = new InterfaceCadastroAtividade();
         enviarInterfaceCadastroAtividades.setVisible(true);
     }

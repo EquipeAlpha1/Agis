@@ -10,23 +10,28 @@ package org.equipealpha.agis.model;
  */
 public class Turma {
     
-    private int id;
-    private String turma;
+    private String nome;
+    private Escola escola;
 
-    public int getId() {
-        return id;
+    public Turma(String nome, Escola escola) {
+        this.nome = nome;
+        this.escola = escola;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public String getNome() {
+        return nome;
     }
 
-    public String getTurma() {
-        return turma;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public void setTurma(String turma) {
-        this.turma = turma;
+    public Escola getEscola() {
+        return escola;
+    }
+
+    public void setEscola(Escola escola) {
+        this.escola = escola;
     }
     
     

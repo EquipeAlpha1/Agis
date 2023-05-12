@@ -1,26 +1,20 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package org.equipealpha.agis.model;
 
-/**
- *
- * @author natan
- */
+import java.util.ArrayList;
+
 public class Aluno {
     
-    private int id;
     private String nome;
+    private ArrayList<Turma> turmas = new ArrayList<>();
+    private ArrayList<Prova> provas = new ArrayList<>();
+    private ArrayList<Trabalho> trabalhos = new ArrayList<>();
+    private ArrayList<Tarefa> tarefas = new ArrayList<>();
 
-    public int getId() {
-        return id;
+    public Aluno(String nome, Turma turma) {
+        this.nome = nome;
+        addTurmaAluno(turma); 
     }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
+    
     public String getNome() {
         return nome;
     }
@@ -29,4 +23,19 @@ public class Aluno {
         this.nome = nome;
     }
     
+    public void addTurmaAluno(Turma turma){
+        turmas.add(turma);
+    }
+    
+    public void addProvaAluno(Prova prova){
+        provas.add(prova);
+    }
+    
+    public void addTrabalhoAluno(Trabalho trabalho){
+        trabalhos.add(trabalho);
+    }
+    
+    public void addTarefaAluno(Tarefa tarefa){
+        tarefas.add(tarefa);
+    }
 }
