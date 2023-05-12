@@ -81,7 +81,7 @@ public abstract class InterfaceBase extends JFrame implements ActionListener {
         labelTextoPendencias.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent e) {
                 setVisible(false);
-                gerenciamentoescolar.ExibirInterfacePendencias();
+                gerenciamentoescolar.exibirInterfacePendencias();
 
 
             }
@@ -136,7 +136,7 @@ public abstract class InterfaceBase extends JFrame implements ActionListener {
         labelTextoEstatisticas.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent e) {
                 setVisible(false);
-                gerenciamentoescolar.ExibirInterfaceSelectTurma();
+                gerenciamentoescolar.exibirInterfaceSelectTurma();
                 
             }
         });
@@ -179,22 +179,22 @@ public abstract class InterfaceBase extends JFrame implements ActionListener {
         if (e.getSource()==opcoesCadastro){
             if (opcoesCadastro.getSelectedItem() == "Atividade"){
                 setVisible(false);
-                gerenciamentoescolar.ExibirCadastroAtividade();
+                gerenciamentoescolar.exibirCadastroAtividade();
                 
             }
             if (opcoesCadastro.getSelectedItem() == "Escola"){
                 setVisible(false);
-                gerenciamentoescolar.ExibirCadastroEscola();
+                gerenciamentoescolar.exibirCadastroEscola();
                 
             }
             if (opcoesCadastro.getSelectedItem() == "Turma"){
                 setVisible(false);
-                gerenciamentoescolar.ExibirCadastroTurma();
+                gerenciamentoescolar.exibirCadastroTurma();
 
             }
             if (opcoesCadastro.getSelectedItem() == "Aluno"){
                 setVisible(false);
-                gerenciamentoescolar.ExibirCadastroAluno();
+                gerenciamentoescolar.exibirCadastroAluno();
 
             }
         }
