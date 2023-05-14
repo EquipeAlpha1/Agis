@@ -9,11 +9,12 @@ package org.equipealpha.agis.model;
  * @author natan
  */
 public class Turma {
-    
+
+    private int id_turma;
     private String nome;
     private Escola escola;
 
-    public Turma(String nome, Escola escola) {
+    public Turma() {
         this.nome = nome;
         this.escola = escola;
     }
@@ -30,10 +31,16 @@ public class Turma {
         return escola;
     }
 
-    public void setEscola(Escola escola) {
+    public void setEscola() {
         this.escola = escola;
     }
-    
-    
-        
+
+    public int getId_turma() {
+        return id_turma;
+    }
+
+    public void setId_turma(int id_turma) {
+        this.id_turma = id_turma;
+    }
+
 }

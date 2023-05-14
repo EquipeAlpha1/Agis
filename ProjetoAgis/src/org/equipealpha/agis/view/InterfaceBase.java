@@ -81,7 +81,6 @@ public abstract class InterfaceBase extends JFrame implements ActionListener {
         labelTextoPendencias.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent e) {
                 setVisible(false);
-                gerenciamentoescolar.exibirInterfacePendencias();
 
 
             }
@@ -134,11 +133,6 @@ public abstract class InterfaceBase extends JFrame implements ActionListener {
         labelTextoEstatisticas= new JLabel("Estatísticas Da Turma");
         labelTextoEstatisticas.setFont(new Font(" Courier New", Font.PLAIN,17));
         labelTextoEstatisticas.addMouseListener(new MouseAdapter() {
-            public void mouseClicked(MouseEvent e) {
-                setVisible(false);
-                gerenciamentoescolar.exibirInterfaceSelectTurma();
-                
-            }
         });
         labelTextoEstatisticas.setCursor(new Cursor(Cursor.HAND_CURSOR));
         painelEstatisticasTurmaSidebar.add(Box.createRigidArea(new Dimension(5,0)), BorderLayout.WEST);
@@ -176,28 +170,7 @@ public abstract class InterfaceBase extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         GerenciamentoEscolar gerenciamentoescolar = new GerenciamentoEscolar();
         
-        if (e.getSource()==opcoesCadastro){
-            if (opcoesCadastro.getSelectedItem() == "Atividade"){
-                setVisible(false);
-                gerenciamentoescolar.exibirCadastroAtividade();
-                
-            }
-            if (opcoesCadastro.getSelectedItem() == "Escola"){
-                setVisible(false);
-                gerenciamentoescolar.exibirCadastroEscola();
-                
-            }
-            if (opcoesCadastro.getSelectedItem() == "Turma"){
-                setVisible(false);
-                gerenciamentoescolar.exibirCadastroTurma();
-
-            }
-            if (opcoesCadastro.getSelectedItem() == "Aluno"){
-                setVisible(false);
-                gerenciamentoescolar.exibirCadastroAluno();
-
-            }
-        }
+        
     }
     
      

@@ -51,7 +51,7 @@ public class InterfaceDetalhes extends InterfaceBase{
         jList1.setBackground(new java.awt.Color(255, 255, 255));
         jList1.setForeground(new java.awt.Color(0, 0, 0));
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Aluno01", "Aluno02", "Aluno03", "Aluno04", "Aluno05", "Aluno06", "Aluno07", "Aluno08", "Aluno09", "Aluno10", "Aluno11", "Aluno12", "Aluno13", "Aluno14", "Aluno15", "Aluno16", "Aluno17", "Aluno18", "Aluno19", "Aluno20", " " };
+            String[] strings = { "Aluno20",};
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });

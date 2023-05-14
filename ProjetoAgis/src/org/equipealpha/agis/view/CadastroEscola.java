@@ -4,8 +4,10 @@
  */
 package org.equipealpha.agis.view;
 
+import DAO.EscolaDAO;
 import javax.swing.*;
 import java.awt.*;
+import org.equipealpha.agis.model.Escola;
 /**
  *
  * @author Pedro Davi
@@ -38,6 +40,17 @@ public class CadastroEscola extends InterfaceBase{
         jLabel2.setFont(new Font(" Courier New", Font.BOLD,14));
 
         jButton1.setText("Cadastrar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                
+                Escola e = new Escola();
+                EscolaDAO DAO = new EscolaDAO();
+                
+                e.setNome(jTextField1.getText());
+                DAO.create(e);
+                
+            }
+        });
 
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(degradeconteudo);
