@@ -81,7 +81,7 @@ public abstract class InterfaceBase extends JFrame implements ActionListener {
         labelTextoPendencias.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent e) {
                 setVisible(false);
-                gerenciamentoescolar.ExibirInterfacePendencias();
+                gerenciamentoescolar.ExibirInterfacePendencias2();
 
 
             }

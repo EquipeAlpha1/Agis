@@ -12,12 +12,13 @@ import org.equipealpha.agis.view.CadastroEscola;
 import org.equipealpha.agis.view.CadastroTurma;
 import org.equipealpha.agis.view.InterfaceCadastroAtividade;
 import org.equipealpha.agis.view.InterfacePendencias;
+import org.equipealpha.agis.view.InterfacePendencias2;
 import org.equipealpha.agis.view.SelectTurma;
 
 public class GerenciamentoEscolar {
     //chamando as classes
     SelectTurma enviarSelectTurma;
-    InterfacePendencias enviarInterfacePendencias;
+    InterfacePendencias2 enviarInterfacePendencias2;
     CadastroAluno enviarCadastroAluno;
     CadastroEscola enviarCadastroEscola;
     CadastroTurma enviarCadastroTurma;
@@ -43,10 +44,10 @@ public class GerenciamentoEscolar {
 
     }
     
-    public void ExibirInterfacePendencias(){
+    public void ExibirInterfacePendencias2(){
         
-        enviarInterfacePendencias = new InterfacePendencias();
-        enviarInterfacePendencias.setVisible(true);
+        enviarInterfacePendencias2 = new InterfacePendencias2();
+        enviarInterfacePendencias2.setVisible(true);
     }
     
     public void ExibirInterfaceSelectTurma(){
