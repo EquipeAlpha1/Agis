@@ -6,6 +6,7 @@ package org.equipealpha.agis.view;
 
 import javax.swing.*;
 import java.awt.*;
+import java.sql.*;
 
 /**
  *
@@ -23,6 +24,7 @@ public class CadastroAluno extends InterfaceBase{
     private JTextField jTextField1; 
 
 
+    
     public CadastroAluno() {
         addConteudo();
     }
@@ -30,14 +32,14 @@ public class CadastroAluno extends InterfaceBase{
     @Override                       
     public void addConteudo() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel4 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        jLabel1 = new JLabel();
+        jLabel2 = new JLabel();
+        jTextField1 = new JTextField();
+        jLabel3 = new JLabel();
+        jComboBox1 = new JComboBox<>();
+        jLabel4 = new JLabel();
+        jComboBox2 = new JComboBox<>();
+        jButton1 = new JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,7 +58,6 @@ public class CadastroAluno extends InterfaceBase{
         jLabel4.setText("Escolha a Turma:");
         jLabel4.setFont(new Font(" Courier New", Font.BOLD,14));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Turma A", "Turma B", "Turma C", "Turma D" }));
 
         jButton1.setText("Cadastrar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {

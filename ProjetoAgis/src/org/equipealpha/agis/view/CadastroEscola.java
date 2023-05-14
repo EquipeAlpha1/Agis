@@ -18,6 +18,12 @@ public class CadastroEscola extends InterfaceBase{
     private JPanel jPanel1;
     private JTextField jTextField1;
     
+        public JTextField getjTextField1() {
+        return jTextField1;
+    }
+        
+        
+    
     public CadastroEscola() {addConteudo();}
 
     @Override
