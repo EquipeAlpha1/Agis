@@ -1,11 +1,13 @@
-
 package org.equipealpha.agis.view;
 
-
+import DAO.EscolaDAO;
+import DAO.TurmaDAO;
 import javax.swing.*;
 import java.awt.*;
+import org.equipealpha.agis.model.Escola;
+import org.equipealpha.agis.model.Turma;
 
-public class CadastroTurma extends InterfaceBase{
+public class CadastroTurma extends InterfaceBase {
 
     //paineis
     private JPanel painelTituloCadastroTurma;
@@ -58,9 +60,9 @@ public class CadastroTurma extends InterfaceBase{
         constraints.gridx = 0;
         constraints.gridy = 0;
         labelTituloCadastroTurma = new JLabel("CADASTRAR TURMA");
-        labelTituloCadastroTurma.setFont(new Font("Courier New", Font.BOLD,20));
+        labelTituloCadastroTurma.setFont(new Font("Courier New", Font.BOLD, 20));
         painelTituloCadastroTurma.add(labelTituloCadastroTurma);
-        painelCadastroTurma.add(painelTituloCadastroTurma,constraints);
+        painelCadastroTurma.add(painelTituloCadastroTurma, constraints);
 
         painelNomeCadastroTurma = new JPanel();
         painelNomeCadastroTurma.setLayout(new GridBagLayout());
@@ -76,8 +78,7 @@ public class CadastroTurma extends InterfaceBase{
         constraints.gridx = 0;
         constraints.gridy = 1;
         constraints.anchor = GridBagConstraints.WEST;
-        painelCadastroTurma.add(painelNomeCadastroTurma,constraints);
-
+        painelCadastroTurma.add(painelNomeCadastroTurma, constraints);
 
         painelEscolaCadastroTurma = new JPanel();
         painelEscolaCadastroTurma.setLayout(new GridBagLayout());
@@ -90,11 +91,16 @@ public class CadastroTurma extends InterfaceBase{
         String[] opcoesEscolaCadastroTurma = {""};
         comboEscolaCadastroTurma = new JComboBox<>(opcoesEscolaCadastroTurma);
         constraints.gridx = 1;
-        painelEscolaCadastroTurma.add(comboEscolaCadastroTurma,constraints);
+        painelEscolaCadastroTurma.add(comboEscolaCadastroTurma, constraints);
         constraints.gridx = 0;
         constraints.gridy = 2;
-        painelCadastroTurma.add(painelEscolaCadastroTurma,constraints);
+        painelCadastroTurma.add(painelEscolaCadastroTurma, constraints);
 
+        EscolaDAO dao = new EscolaDAO();
+        for (Escola e : dao.read()) {
+
+            comboEscolaCadastroTurma.addItem(e.getNome());
+        }
 
         painelBtnCadastroTurma = new JPanel();
         painelBtnCadastroTurma.setLayout(new FlowLayout(FlowLayout.CENTER));
@@ -103,13 +109,22 @@ public class CadastroTurma extends InterfaceBase{
         constraints.gridy = 3;
         constraints.gridx = 0;
         btnCadastroTurma = new JButton("Cadastrar");
-        btnCadastroTurma.setFont(new Font("Courier New", Font.PLAIN,13));
+        btnCadastroTurma.setFont(new Font("Courier New", Font.BOLD, 15));
         btnCadastroTurma.setFocusable(false);
         painelBtnCadastroTurma.add(btnCadastroTurma);
-        constraints.anchor = GridBagConstraints.CENTER;
-        painelCadastroTurma.add(painelBtnCadastroTurma,constraints);
+        constraints.anchor = GridBagConstraints.EAST;
+        painelCadastroTurma.add(painelBtnCadastroTurma, constraints);
+
+        btnCadastroTurma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+
+                Turma t = new Turma();
+                TurmaDAO DAO = new TurmaDAO();
+                t.setNome(textoNomeCadastroTurma.getText());
+                DAO.create(t);
+            }
+        });
+
 
     }
 }
-
-    

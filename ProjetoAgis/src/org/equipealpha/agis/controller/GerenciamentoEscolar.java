@@ -1,7 +1,14 @@
 package org.equipealpha.agis.controller;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import org.equipealpha.agis.model.Aluno;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.equipealpha.agis.model.Escola;
 import org.equipealpha.agis.model.Prova;
 import org.equipealpha.agis.model.Tarefa;
@@ -15,7 +22,65 @@ import org.equipealpha.agis.view.InterfacePendencias;
 import org.equipealpha.agis.view.SelectTurma;
 
 public class GerenciamentoEscolar {
-    
+
+    private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
+    private static final String URL = "jdbc:mysql://localhost:3306/agis";
+    private static final String USER = "root";
+    private static final String PASS = "123456";
+
+    public static Connection getConnection() {
+        try {
+            Class.forName(DRIVER);
+            return DriverManager.getConnection(URL, USER, PASS);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(GerenciamentoEscolar.class.getName()).log(Level.SEVERE, "Driver JDBC não encontrado", ex);
+            throw new RuntimeException("Erro na conexão: Driver JDBC não encontrado", ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(GerenciamentoEscolar.class.getName()).log(Level.SEVERE, "Erro ao conectar ao banco de dados", ex);
+            throw new RuntimeException("Erro na conexão: Erro ao conectar ao banco de dados", ex);
+        }
+    }
+
+    public static void closeConnection(Connection con) {
+        try {
+            if (con != null) {
+                con.close();
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(GerenciamentoEscolar.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public static void closeConnection(Connection con, PreparedStatement stmt) {
+
+        closeConnection(con);
+
+        try {
+
+            if (stmt != null) {
+                stmt.close();
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(GerenciamentoEscolar.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public static void closeConnection(Connection con, PreparedStatement stmt, ResultSet rs) {
+
+        closeConnection(con, stmt);
+
+        try {
+
+            if (rs != null) {
+                rs.close();
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(GerenciamentoEscolar.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
     //Classes
     private SelectTurma enviarSelectTurma;
     private InterfacePendencias enviarInterfacePendencias;
@@ -31,44 +96,44 @@ public class GerenciamentoEscolar {
     private ArrayList<Prova> provas = new ArrayList<Prova>();
 
     //Métodos
-    public void porcentProvaRealizadas(Prova prova){
-        
-        if (prova.isConcluido()==true){
-            
+    public void porcentProvaRealizadas(Prova prova) {
+
+        if (prova.isConcluido() == true) {
+
         }
     }
-    
-    public void exibirInterfacePendencias(){
-        
+
+    public void exibirInterfacePendencias() {
+
         enviarInterfacePendencias = new InterfacePendencias();
         enviarInterfacePendencias.setVisible(true);
     }
-    
-    public void exibirInterfaceSelectTurma(){
-            enviarSelectTurma = new SelectTurma();
-            enviarSelectTurma.setVisible(true);
+
+    public void exibirInterfaceSelectTurma() {
+        enviarSelectTurma = new SelectTurma();
+        enviarSelectTurma.setVisible(true);
     }
-    
-    public void exibirCadastroAluno(){
-            enviarCadastroAluno = new CadastroAluno();
-            enviarCadastroAluno.setVisible(true);
+
+    public void exibirCadastroAluno() {
+        enviarCadastroAluno = new CadastroAluno();
+        enviarCadastroAluno.setVisible(true);
     }
-    
-    public void exibirCadastroEscola(){
+
+    public void exibirCadastroEscola() {
         enviarCadastroEscola = new CadastroEscola();
         enviarCadastroEscola.setVisible(true);
     }
 
-      public void exibirCadastroTurma(){
+    public void exibirCadastroTurma() {
         enviarCadastroTurma = new CadastroTurma();
         enviarCadastroTurma.setVisible(true);
     }
-    
-       public void exibirCadastroAtividade(){
+
+    public void exibirCadastroAtividade() {
         enviarInterfaceCadastroAtividades = new InterfaceCadastroAtividade();
         enviarInterfaceCadastroAtividades.setVisible(true);
     }
-    
+
     private void setVisible(boolean b) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
