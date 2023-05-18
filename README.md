@@ -15,7 +15,7 @@ O projeto Agis é uma ferramenta desktop que tem como objetivo auxiliar professo
 
 ## Backlog total
 
-![Backlog total](https://user-images.githubusercontent.com/111358479/228885551-34260542-a8b2-4ccf-9ae7-f5c0d132d695.png)
+![image](https://github.com/EquipeAlpha1/Agis/assets/111640323/5b0cf1f8-ab14-4e42-9ec6-1dfef6cff1e9)
 
 
 ## Sprint 1
@@ -53,7 +53,23 @@ O projeto Agis é uma ferramenta desktop que tem como objetivo auxiliar professo
   
 ![image](https://user-images.githubusercontent.com/111640323/233860014-6699cdff-5e5b-491e-9d00-6bbe1cca19e7.png)
 
-  
+ ## Sprint 3
+ 
+ ### Backlog (Sprint 3)
+ 
+ | US | Estimativa de esforço | Critério de aceitação |
+|:--------------:  | :----------:|:---------------------------------:|
+| Integração entre BD e UML | 12 | Salvar as informações no BD |
+| Implementar BD | 8 | Implementar um BD funcional. |
+| Funcionalidades estatísticas | 8 | Estatísticas da turma e atividades. |
+| Integração entre as páginas | 6 | Melhorar a navegação entre as páginas. |
+| Formatação das páginas | 5 | Padronizar as interfaces. |
+ 
+ ### Burndown (Sprint 3)
+ 
+ ![image](https://github.com/EquipeAlpha1/Agis/assets/111640323/65174daf-7303-4cf9-9819-7282a67f1e36)
+
+ 
 ## Tecnologias e ferramentas
 * Java;
 * MySQL;
