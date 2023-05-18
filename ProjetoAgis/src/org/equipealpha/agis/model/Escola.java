@@ -1,11 +1,16 @@
 package org.equipealpha.agis.model;
 
 public class Escola {
-    
-   private String nome;
 
-    public Escola(String nome) {
-        this.nome = nome;
+    private int id_escola;
+    private String nome;
+
+    public int getId_escola() {
+        return id_escola;
+    }
+
+    public void setId_escola(int id_escola) {
+        this.id_escola = id_escola;
     }
 
     public String getNome() {

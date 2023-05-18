@@ -1,11 +1,11 @@
-
 package org.equipealpha.agis.view;
 
-
+import DAO.EscolaDAO;
 import javax.swing.*;
 import java.awt.*;
+import org.equipealpha.agis.model.Escola;
 
-public class CadastroEscola extends InterfaceBase{
+public class CadastroEscola extends InterfaceBase {
 
     //paineis
     private JPanel painelTituloCadastroEscola;
@@ -54,9 +54,9 @@ public class CadastroEscola extends InterfaceBase{
         constraints.gridx = 0;
         constraints.gridy = 0;
         labelTituloCadastroEscola = new JLabel("CADASTRAR ESCOLA");
-        labelTituloCadastroEscola.setFont(new Font("Courier New", Font.BOLD,20));
+        labelTituloCadastroEscola.setFont(new Font("Courier New", Font.BOLD, 20));
         painelTituloCadastroEscola.add(labelTituloCadastroEscola);
-        painelCadastroEscola.add(painelTituloCadastroEscola,constraints);
+        painelCadastroEscola.add(painelTituloCadastroEscola, constraints);
 
         painelNomeCadastroEscola = new JPanel();
         painelNomeCadastroEscola.setLayout(new FlowLayout(FlowLayout.LEFT));
@@ -64,11 +64,11 @@ public class CadastroEscola extends InterfaceBase{
         constraints.gridy = 1;
         constraints.gridx = 0;
         labelNomeCadastroEscola = new JLabel("Nome:");
-        labelNomeCadastroEscola.setFont(new Font("Courier New", Font.BOLD,15));
+        labelNomeCadastroEscola.setFont(new Font("Courier New", Font.BOLD, 15));
         textoNomeCadastroEscola = new JTextField(30);
         painelNomeCadastroEscola.add(labelNomeCadastroEscola);
         painelNomeCadastroEscola.add(textoNomeCadastroEscola);
-        painelCadastroEscola.add(painelNomeCadastroEscola,constraints);
+        painelCadastroEscola.add(painelNomeCadastroEscola, constraints);
 
         painelBtnCadastroEscola = new JPanel();
         painelBtnCadastroEscola.setLayout(new FlowLayout(FlowLayout.RIGHT));
@@ -76,12 +76,20 @@ public class CadastroEscola extends InterfaceBase{
         constraints.gridy = 2;
         constraints.gridx = 0;
         btnCadastroEscola = new JButton("Cadastrar");
-        btnCadastroEscola.setFont(new Font("Courier New", Font.BOLD,15));
+        btnCadastroEscola.setFont(new Font("Courier New", Font.BOLD, 15));
         btnCadastroEscola.setFocusable(false);
         painelBtnCadastroEscola.add(btnCadastroEscola);
-        painelCadastroEscola.add(painelBtnCadastroEscola,constraints);
+        painelCadastroEscola.add(painelBtnCadastroEscola, constraints);
 
+        btnCadastroEscola.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+
+                Escola e = new Escola();
+                EscolaDAO DAO = new EscolaDAO();
+
+                e.setNome(textoNomeCadastroEscola.getText());
+                DAO.create(e);
+            }
+        });
     }
 }
-
-    
