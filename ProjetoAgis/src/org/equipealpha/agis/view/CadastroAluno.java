@@ -1,120 +1,98 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package org.equipealpha.agis.view;
 
 import javax.swing.*;
 import java.awt.*;
 
-/**
- *
- * @author Pedro Davi
- */
 public class CadastroAluno extends InterfaceBase{
-    
-    private JButton jButton1;
-    private JComboBox<String> jComboBox1;
-    private JComboBox<String> jComboBox2;
-    private JLabel jLabel1;
-    private JLabel jLabel2;
-    private JLabel jLabel3;
-    private JLabel jLabel4;
-    private JTextField jTextField1; 
 
+    //labels
+    private JLabel labelTituloCadastroAluno;
+    private JLabel labelNomeCadastroAluno;
+    private JLabel labelEscolaCadastroAluno;
+    private JLabel labelTurmaCadastroAluno;
+    //textfields
+    private JTextField textoNomeCadastroAluno;
+    //combobox
+    private JComboBox comboEscola;
+    private JComboBox comboTurma;
+    //outros
+    private GridBagConstraints constraints;
+    private RoundedPanel painelCadastroAluno;
+    private JButton btnCadastroAluno;
 
     public CadastroAluno() {
         addConteudo();
     }
 
-    @Override                       
+    @Override
     public void addConteudo() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel4 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        //Configurando area do conteudo
+        degradeconteudo.setLayout(new GridBagLayout());
+        constraints = new GridBagConstraints();
+        Insets insets = new Insets(20, 0, 20, 0);
+        constraints.insets = insets;
+        constraints.ipadx = 0;
+        constraints.ipady = 0;
+        constraints.gridx = 0;
+        constraints.gridy = 0;
+        constraints.weightx = 0;
+        constraints.weighty = 0;
+        constraints.fill = GridBagConstraints.WEST;
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        //Configurando o painel
+        painelCadastroAluno = new RoundedPanel(20);
+        painelCadastroAluno.setLayout(new GridBagLayout());
+        painelCadastroAluno.setPreferredSize(new Dimension(450, 400));
+        painelCadastroAluno.setBackground(new Color(255, 255, 255, 175));
+        degradeconteudo.add(painelCadastroAluno, constraints);
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("CADASTRO DE ALUNO");
-        jLabel1.setFont(new Font(" Courier New", Font.BOLD,17));
+        labelTituloCadastroAluno = new JLabel("CADASTRAR ALUNO");
+        labelTituloCadastroAluno.setFont(new Font("Courier New", Font.BOLD,25));
+        constraints.gridwidth = 2;
+        constraints.gridx = 2;
+        painelCadastroAluno.add(labelTituloCadastroAluno, constraints);
 
-        jLabel2.setText("Nome do Aluno:");
-        jLabel2.setFont(new Font(" Courier New", Font.BOLD,14));
+        labelNomeCadastroAluno = new JLabel("Nome:");
+        constraints.gridx = 0;
+        constraints.gridy = 1;
+        constraints.gridwidth = 1;
+        labelNomeCadastroAluno.setFont(new Font("Courier New", Font.BOLD,15));
+        painelCadastroAluno.add(labelNomeCadastroAluno, constraints);
+        textoNomeCadastroAluno = new JTextField();
+        constraints.gridx = 1;
+        constraints.gridwidth = 4;
+        constraints.fill = GridBagConstraints.HORIZONTAL;
+        constraints.insets.set(20,0,20,0);
+        painelCadastroAluno.add(textoNomeCadastroAluno, constraints);
 
-        jLabel3.setText("Escolha a Escola:");
-        jLabel3.setFont(new Font(" Courier New", Font.BOLD,14));
+        labelEscolaCadastroAluno = new JLabel("Escola:");
+        constraints.gridx = 0;
+        constraints.gridy = 2;
+        constraints.gridwidth = 1;
+        labelEscolaCadastroAluno.setFont(new Font("Courier New", Font.BOLD,15));
+        painelCadastroAluno.add(labelEscolaCadastroAluno, constraints);
+        String[] opcoesComboEscola = {""};
+        comboEscola = new JComboBox(opcoesComboEscola);
+        constraints.gridx = 1;
+        painelCadastroAluno.add(comboEscola, constraints);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Escola A", "Escola B", "Escola C", "Escola D" }));
+        labelTurmaCadastroAluno = new JLabel("Turma:");
+        constraints.gridx = 0;
+        constraints.gridy = 3;
+        labelTurmaCadastroAluno.setFont(new Font("Courier New", Font.BOLD,15));
+        painelCadastroAluno.add(labelTurmaCadastroAluno, constraints);
+        String[] opcoesTurma = {""};
+        comboTurma = new JComboBox(opcoesTurma);
+        constraints.gridx = 1;
+        painelCadastroAluno.add(comboTurma, constraints);
 
-        jLabel4.setText("Escolha a Turma:");
-        jLabel4.setFont(new Font(" Courier New", Font.BOLD,14));
-
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Turma A", "Turma B", "Turma C", "Turma D" }));
-
-        jButton1.setText("Cadastrar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(degradeconteudo);
-        degradeconteudo.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(200, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(330, 330, 330))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton1)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jComboBox2, 0, 410, Short.MAX_VALUE)
-                                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField1))))
-                        .addGap(145, 145, 145))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(38, 38, 38)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel3)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(46, 46, 46)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addGap(68, 68, 68)
-                .addComponent(jButton1)
-                .addContainerGap(399, Short.MAX_VALUE))
-        );
-
-        pack();
-    }                       
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-    }                                        
+        btnCadastroAluno = new JButton("Cadastrar");
+        btnCadastroAluno.setFocusable(false);
+        btnCadastroAluno.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        btnCadastroAluno.setFont(new Font("Courier New", Font.BOLD,13));
+        constraints.gridx = 4;
+        constraints.gridy = 4;
+        painelCadastroAluno.add(btnCadastroAluno, constraints);
+    }
 }
