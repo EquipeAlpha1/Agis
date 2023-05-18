@@ -5,12 +5,6 @@ import java.awt.*;
 
 public class CadastroAluno extends InterfaceBase{
 
-    //paineis
-    private JPanel painelTituloCadastroAluno;
-    private JPanel painelNomeCadastroAluno;
-    private JPanel painelEscolaCadastroAluno;
-    private JPanel painelTurmaCadastroAluno;
-    private JPanel painelBtnCadastroAluno;
     //labels
     private JLabel labelTituloCadastroAluno;
     private JLabel labelNomeCadastroAluno;
@@ -23,7 +17,7 @@ public class CadastroAluno extends InterfaceBase{
     private JComboBox comboTurma;
     //outros
     private GridBagConstraints constraints;
-    private RoundedPanel panelCadastroAluno;
+    private RoundedPanel painelCadastroAluno;
     private JButton btnCadastroAluno;
 
     public CadastroAluno() {
@@ -36,67 +30,69 @@ public class CadastroAluno extends InterfaceBase{
         //Configurando area do conteudo
         degradeconteudo.setLayout(new GridBagLayout());
         constraints = new GridBagConstraints();
+        Insets insets = new Insets(20, 0, 20, 0);
+        constraints.insets = insets;
+        constraints.ipadx = 0;
+        constraints.ipady = 0;
         constraints.gridx = 0;
         constraints.gridy = 0;
-        constraints.weightx = 1.0;
-        constraints.weighty = 1.0;
-        constraints.fill = GridBagConstraints.CENTER;
+        constraints.weightx = 0;
+        constraints.weighty = 0;
+        constraints.fill = GridBagConstraints.WEST;
 
         //Configurando o painel
-        panelCadastroAluno = new RoundedPanel(20);
-        panelCadastroAluno.setLayout(new BoxLayout(panelCadastroAluno, BoxLayout.PAGE_AXIS));
-        panelCadastroAluno.setPreferredSize(new Dimension(400,400));
-        panelCadastroAluno.setBackground(new Color(255, 255, 255, 175));
-        degradeconteudo.add(panelCadastroAluno, constraints);
+        painelCadastroAluno = new RoundedPanel(20);
+        painelCadastroAluno.setLayout(new GridBagLayout());
+        painelCadastroAluno.setPreferredSize(new Dimension(450, 400));
+        painelCadastroAluno.setBackground(new Color(255, 255, 255, 175));
+        degradeconteudo.add(painelCadastroAluno, constraints);
 
-        //Informações dentro do painel
-        panelCadastroAluno.add(Box.createRigidArea(new Dimension(0,15)));
-        painelTituloCadastroAluno = new JPanel();
-        painelTituloCadastroAluno.setLayout(new FlowLayout(FlowLayout.CENTER,0,0));
-        painelTituloCadastroAluno.setBackground(new Color(255, 255, 255, 0));
         labelTituloCadastroAluno = new JLabel("CADASTRAR ALUNO");
-        labelTituloCadastroAluno.setFont(new Font(" Courier New", Font.PLAIN,20));
-        painelTituloCadastroAluno.add(labelTituloCadastroAluno);
-        panelCadastroAluno.add(painelTituloCadastroAluno);
+        labelTituloCadastroAluno.setFont(new Font("Courier New", Font.BOLD,25));
+        constraints.gridwidth = 2;
+        constraints.gridx = 2;
+        painelCadastroAluno.add(labelTituloCadastroAluno, constraints);
 
-        painelNomeCadastroAluno = new JPanel();
-        painelNomeCadastroAluno.setLayout(new FlowLayout(FlowLayout.LEFT,0,0));
-        painelNomeCadastroAluno.setBackground(new Color(255, 255, 255, 0));
         labelNomeCadastroAluno = new JLabel("Nome:");
-        textoNomeCadastroAluno = new JTextField(30);
-        painelNomeCadastroAluno.add(Box.createRigidArea(new Dimension(10,0)));
-        painelNomeCadastroAluno.add(labelNomeCadastroAluno);
-        painelNomeCadastroAluno.add(textoNomeCadastroAluno);
-        panelCadastroAluno.add(painelNomeCadastroAluno);
+        constraints.gridx = 0;
+        constraints.gridy = 1;
+        constraints.gridwidth = 1;
+        labelNomeCadastroAluno.setFont(new Font("Courier New", Font.BOLD,15));
+        painelCadastroAluno.add(labelNomeCadastroAluno, constraints);
+        textoNomeCadastroAluno = new JTextField();
+        constraints.gridx = 1;
+        constraints.gridwidth = 4;
+        constraints.fill = GridBagConstraints.HORIZONTAL;
+        constraints.insets.set(20,0,20,0);
+        painelCadastroAluno.add(textoNomeCadastroAluno, constraints);
 
-        painelEscolaCadastroAluno = new JPanel();
-        painelEscolaCadastroAluno.setLayout(new FlowLayout(FlowLayout.LEFT,0,0));
-        painelEscolaCadastroAluno.setBackground(new Color(255, 255, 255, 0));
         labelEscolaCadastroAluno = new JLabel("Escola:");
+        constraints.gridx = 0;
+        constraints.gridy = 2;
+        constraints.gridwidth = 1;
+        labelEscolaCadastroAluno.setFont(new Font("Courier New", Font.BOLD,15));
+        painelCadastroAluno.add(labelEscolaCadastroAluno, constraints);
         String[] opcoesComboEscola = {""};
         comboEscola = new JComboBox(opcoesComboEscola);
-        painelEscolaCadastroAluno.add(Box.createRigidArea(new Dimension(10,0)));
-        painelEscolaCadastroAluno.add(labelEscolaCadastroAluno);
-        painelEscolaCadastroAluno.add(comboEscola);
-        panelCadastroAluno.add(painelEscolaCadastroAluno);
+        constraints.gridx = 1;
+        painelCadastroAluno.add(comboEscola, constraints);
 
-        painelTurmaCadastroAluno = new JPanel();
-        painelTurmaCadastroAluno.setLayout(new FlowLayout(FlowLayout.LEFT,0,0));
-        painelTurmaCadastroAluno.setBackground(new Color(255, 255, 255, 0));
         labelTurmaCadastroAluno = new JLabel("Turma:");
-        String[] opcoesComboTurma = {""};
-        comboTurma = new JComboBox(opcoesComboTurma);
-        painelTurmaCadastroAluno.add(Box.createRigidArea(new Dimension(10,0)));
-        painelTurmaCadastroAluno.add(labelTurmaCadastroAluno);
-        painelTurmaCadastroAluno.add(comboTurma);
-        panelCadastroAluno.add(painelTurmaCadastroAluno);
+        constraints.gridx = 0;
+        constraints.gridy = 3;
+        labelTurmaCadastroAluno.setFont(new Font("Courier New", Font.BOLD,15));
+        painelCadastroAluno.add(labelTurmaCadastroAluno, constraints);
+        String[] opcoesTurma = {""};
+        comboTurma = new JComboBox(opcoesTurma);
+        constraints.gridx = 1;
+        painelCadastroAluno.add(comboTurma, constraints);
 
-        painelBtnCadastroAluno = new JPanel();
-        painelBtnCadastroAluno.setLayout(new FlowLayout(FlowLayout.RIGHT,0,0));
-        painelBtnCadastroAluno.setBackground(new Color(255, 255, 255, 0));
         btnCadastroAluno = new JButton("Cadastrar");
-        painelBtnCadastroAluno.add(Box.createRigidArea(new Dimension(20,0)));
-        painelBtnCadastroAluno.add(btnCadastroAluno);
-        panelCadastroAluno.add(painelBtnCadastroAluno);
+        btnCadastroAluno.setFocusable(false);
+        btnCadastroAluno.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        btnCadastroAluno.setFont(new Font("Courier New", Font.BOLD,13));
+        constraints.gridx = 4;
+        constraints.gridy = 4;
+        painelCadastroAluno.add(btnCadastroAluno, constraints);
     }
 }
