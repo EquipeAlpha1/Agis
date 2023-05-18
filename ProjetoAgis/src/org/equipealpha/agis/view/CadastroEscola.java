@@ -64,7 +64,7 @@ public class CadastroEscola extends InterfaceBase{
         constraints.gridy = 1;
         constraints.gridx = 0;
         labelNomeCadastroEscola = new JLabel("Nome:");
-        labelNomeCadastroEscola.setFont(new Font("Courier New", Font.BOLD,15));
+        labelNomeCadastroEscola.setFont(new Font("Courier New", Font.PLAIN,13));
         textoNomeCadastroEscola = new JTextField(30);
         painelNomeCadastroEscola.add(labelNomeCadastroEscola);
         painelNomeCadastroEscola.add(textoNomeCadastroEscola);
@@ -76,7 +76,7 @@ public class CadastroEscola extends InterfaceBase{
         constraints.gridy = 2;
         constraints.gridx = 0;
         btnCadastroEscola = new JButton("Cadastrar");
-        btnCadastroEscola.setFont(new Font("Courier New", Font.BOLD,15));
+        btnCadastroEscola.setFont(new Font("Courier New", Font.PLAIN,13));
         btnCadastroEscola.setFocusable(false);
         painelBtnCadastroEscola.add(btnCadastroEscola);
         painelCadastroEscola.add(painelBtnCadastroEscola,constraints);
