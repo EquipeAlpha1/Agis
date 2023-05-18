@@ -70,7 +70,7 @@ public class CadastroTurma extends InterfaceBase {
         constraints.gridy = 0; // Ajuste aqui para definir a linha correta
         constraints.gridx = 0;
         labelNomeCadastroTurma = new JLabel("Nome:");
-        labelNomeCadastroTurma.setFont(new Font("Courier New", Font.BOLD, 15));
+        labelNomeCadastroTurma.setFont(new Font("Courier New", Font.PLAIN,13));
         painelNomeCadastroTurma.add(labelNomeCadastroTurma, constraints);
         textoNomeCadastroTurma = new JTextField(20);
         constraints.gridx = 1;
@@ -86,8 +86,8 @@ public class CadastroTurma extends InterfaceBase {
         constraints.gridy = 0;
         constraints.gridx = 0;
         labelEscolaCadastroTurma = new JLabel("Escola:");
-        labelEscolaCadastroTurma.setFont(new Font("Courier New", Font.BOLD, 15));
-        painelEscolaCadastroTurma.add(labelEscolaCadastroTurma, constraints);
+        labelEscolaCadastroTurma.setFont(new Font("Courier New", Font.PLAIN,13));
+        painelEscolaCadastroTurma.add(labelEscolaCadastroTurma,constraints);
         String[] opcoesEscolaCadastroTurma = {""};
         comboEscolaCadastroTurma = new JComboBox<>(opcoesEscolaCadastroTurma);
         constraints.gridx = 1;
@@ -124,6 +124,7 @@ public class CadastroTurma extends InterfaceBase {
                 DAO.create(t);
             }
         });
+
 
     }
 }

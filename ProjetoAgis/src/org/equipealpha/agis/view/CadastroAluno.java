@@ -54,7 +54,7 @@ public class CadastroAluno extends InterfaceBase {
         degradeconteudo.add(painelCadastroAluno, constraints);
 
         labelTituloCadastroAluno = new JLabel("CADASTRAR ALUNO");
-        labelTituloCadastroAluno.setFont(new Font("Courier New", Font.BOLD, 25));
+        labelTituloCadastroAluno.setFont(new Font("Courier New", Font.BOLD,20));
         constraints.gridwidth = 2;
         constraints.gridx = 2;
         painelCadastroAluno.add(labelTituloCadastroAluno, constraints);
@@ -63,7 +63,7 @@ public class CadastroAluno extends InterfaceBase {
         constraints.gridx = 0;
         constraints.gridy = 1;
         constraints.gridwidth = 1;
-        labelNomeCadastroAluno.setFont(new Font("Courier New", Font.BOLD, 15));
+        labelNomeCadastroAluno.setFont(new Font("Courier New", Font.PLAIN,13));
         painelCadastroAluno.add(labelNomeCadastroAluno, constraints);
         textoNomeCadastroAluno = new JTextField();
         constraints.gridx = 1;
@@ -76,7 +76,7 @@ public class CadastroAluno extends InterfaceBase {
         constraints.gridx = 0;
         constraints.gridy = 2;
         constraints.gridwidth = 1;
-        labelEscolaCadastroAluno.setFont(new Font("Courier New", Font.BOLD, 15));
+        labelEscolaCadastroAluno.setFont(new Font("Courier New", Font.PLAIN,13));
         painelCadastroAluno.add(labelEscolaCadastroAluno, constraints);
         String[] opcoesComboEscola = {""};
         comboEscola = new JComboBox(opcoesComboEscola);
@@ -91,7 +91,7 @@ public class CadastroAluno extends InterfaceBase {
         labelTurmaCadastroAluno = new JLabel("Turma:");
         constraints.gridx = 0;
         constraints.gridy = 3;
-        labelTurmaCadastroAluno.setFont(new Font("Courier New", Font.BOLD, 15));
+        labelTurmaCadastroAluno.setFont(new Font("Courier New", Font.PLAIN,13));
         painelCadastroAluno.add(labelTurmaCadastroAluno, constraints);
         String[] opcoesTurma = {""};
         comboTurma = new JComboBox(opcoesTurma);
@@ -106,9 +106,10 @@ public class CadastroAluno extends InterfaceBase {
         btnCadastroAluno = new JButton("Cadastrar");
         btnCadastroAluno.setFocusable(false);
         btnCadastroAluno.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        btnCadastroAluno.setFont(new Font("Courier New", Font.BOLD, 13));
+        btnCadastroAluno.setFont(new Font("Courier New", Font.PLAIN,13));
         constraints.gridx = 4;
         constraints.gridy = 4;
+        constraints.anchor = GridBagConstraints.CENTER;
         painelCadastroAluno.add(btnCadastroAluno, constraints);
 
         btnCadastroAluno.addActionListener(new java.awt.event.ActionListener() {
