@@ -1,5 +1,6 @@
 package org.equipealpha.agis.controller;
 
+import java.beans.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -137,5 +138,44 @@ public class GerenciamentoEscolar {
     private void setVisible(boolean b) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+    
+     private static double calcularPorcentagemFeito(Connection connection) throws SQLException {
+        String query = "SELECT COUNT(*) AS total, SUM(coluna_booleana) AS feitos " +
+                           "FROM sua_tabela";
+        try (java.sql.Statement statement = connection.createStatement();
+             ResultSet resultSet = statement.executeQuery(query)) {
 
+            if (resultSet.next()) {
+                int total = resultSet.getInt("total");
+                int feitos = resultSet.getInt("feitos");
+
+                 double porcentagemFeitos = (feitos / (double) total) * 100;
+                 double porcentagemNaoFeitos = 100 - porcentagemFeitos;
+                 
+                 return new Porcentagem(porcentagemFeitos, porcentagemNaoFeitos);
+            }
+
+}
+        return new Porcentagem(0.0, 0.0);
+
+     }
+     
+     private static class Porcentagem {
+        private double feito;
+        private double naoFeito;
+
+        public Porcentagem(double feito, double naoFeito) {
+            this.feito = feito;
+            this.naoFeito = naoFeito;
+        }
+
+        public double getFeito() {
+            return feito;
+        }
+
+        public double getNaoFeito() {
+            return naoFeito;
+        }
+     }
+     
 }
