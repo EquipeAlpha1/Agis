@@ -152,11 +152,12 @@ public class GerenciamentoEscolar {
                  double porcentagemFeitos = (feitos / (double) total) * 100;
                  double porcentagemNaoFeitos = 100 - porcentagemFeitos;
                  
-                 return new Porcentagem(porcentagemFeitos, porcentagemNaoFeitos);
+                 //return new Porcentagem(porcentagemFeitos, porcentagemNaoFeitos);
             }
 
 }
-        return new Porcentagem(0.0, 0.0);
+        //return new Porcentagem(0.0, 0.0);
+        return 0;
 
      }
      
