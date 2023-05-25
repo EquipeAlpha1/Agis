@@ -27,7 +27,7 @@ public class Aluno {
         this.nome = nome;
     }
 
-    public void addTurmaAluno(Turma turma) {
+    public void addTurma(Turma turma) {
         turmas.add(turma);
     }
 

@@ -1,12 +1,15 @@
 package org.equipealpha.agis.controller;
 
-import java.beans.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import org.equipealpha.agis.DAO.*;
 import org.equipealpha.agis.model.Aluno;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -15,20 +18,32 @@ import org.equipealpha.agis.model.Prova;
 import org.equipealpha.agis.model.Tarefa;
 import org.equipealpha.agis.model.Trabalho;
 import org.equipealpha.agis.model.Turma;
-import org.equipealpha.agis.view.CadastroAluno;
-import org.equipealpha.agis.view.CadastroEscola;
-import org.equipealpha.agis.view.CadastroTurma;
-import org.equipealpha.agis.view.InterfaceCadastroAtividade;
-import org.equipealpha.agis.view.InterfacePendencias;
-import org.equipealpha.agis.view.SelectTurma;
+import org.equipealpha.agis.view.*;
 
 public class GerenciamentoEscolar {
 
+    //BD
     private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
     private static final String URL = "jdbc:mysql://localhost:3306/agis";
     private static final String USER = "root";
     private static final String PASS = "123456";
+    //Classes
+    private SelectTurma enviarSelectTurma;
+    private ListaAtividades enviarInterfacePendencias;
+    private CadastroAluno enviarCadastroAluno;
+    private CadastroEscola enviarCadastroEscola;
+    private CadastroTurma enviarCadastroTurma;
+    private InterfaceCadastroProva interfaceCadastroProva;
+    private InterfaceCadastroTrabalho interfaceCadastroTrabalho;
+    private InterfaceCadastroTarefa interfaceCadastroTarefa;
+    private ArrayList<Aluno> alunos = new ArrayList<Aluno>();
+    private ArrayList<Turma> turmas = new ArrayList<Turma>();
+    private ArrayList<Escola> escolas = new ArrayList<Escola>();
+    private ArrayList<Trabalho> trabalhos = new ArrayList<Trabalho>();
+    private ArrayList<Tarefa> tarefas = new ArrayList<Tarefa>();
+    private ArrayList<Prova> provas = new ArrayList<Prova>();
 
+    //metodos BD
     public static Connection getConnection() {
         try {
             Class.forName(DRIVER);
@@ -82,31 +97,10 @@ public class GerenciamentoEscolar {
         }
     }
 
-    //Classes
-    private SelectTurma enviarSelectTurma;
-    private InterfacePendencias enviarInterfacePendencias;
-    private CadastroAluno enviarCadastroAluno;
-    private CadastroEscola enviarCadastroEscola;
-    private CadastroTurma enviarCadastroTurma;
-    private InterfaceCadastroAtividade enviarInterfaceCadastroAtividades;
-    private ArrayList<Aluno> alunos = new ArrayList<Aluno>();
-    private ArrayList<Turma> turmas = new ArrayList<Turma>();
-    private ArrayList<Escola> escolas = new ArrayList<Escola>();
-    private ArrayList<Trabalho> trabalhos = new ArrayList<Trabalho>();
-    private ArrayList<Tarefa> tarefas = new ArrayList<Tarefa>();
-    private ArrayList<Prova> provas = new ArrayList<Prova>();
+    //Metodos de exibicao de interfaces
+    public void exibirListaAtividades() {
 
-    //Métodos
-    public void porcentProvaRealizadas(Prova prova) {
-
-        if (prova.isConcluido() == true) {
-
-        }
-    }
-
-    public void exibirInterfacePendencias() {
-
-        enviarInterfacePendencias = new InterfacePendencias();
+        enviarInterfacePendencias = new ListaAtividades();
         enviarInterfacePendencias.setVisible(true);
     }
 
@@ -130,52 +124,103 @@ public class GerenciamentoEscolar {
         enviarCadastroTurma.setVisible(true);
     }
 
-    public void exibirCadastroAtividade() {
-        enviarInterfaceCadastroAtividades = new InterfaceCadastroAtividade();
-        enviarInterfaceCadastroAtividades.setVisible(true);
+    public void exibirCadastroProva() {
+        interfaceCadastroProva = new InterfaceCadastroProva();
+        interfaceCadastroProva.setVisible(true);
     }
 
-    private void setVisible(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void exibirCadastroTrabalho() {
+        interfaceCadastroTrabalho = new InterfaceCadastroTrabalho();
+        interfaceCadastroTrabalho.setVisible(true);
     }
-    
-     private static double calcularPorcentagemFeito(Connection connection) throws SQLException {
-        String query = "SELECT COUNT(*) AS total, SUM(coluna_booleana) AS feitos " +
-                           "FROM sua_tabela";
-        try (java.sql.Statement statement = connection.createStatement();
-             ResultSet resultSet = statement.executeQuery(query)) {
 
-            if (resultSet.next()) {
-                int total = resultSet.getInt("total");
-                int feitos = resultSet.getInt("feitos");
+    public void exibirCadastroTarefa() {
+        interfaceCadastroTarefa = new InterfaceCadastroTarefa();
+        interfaceCadastroTarefa.setVisible(true);
+    }
 
-                 double porcentagemFeitos = (feitos / (double) total) * 100;
-                 double porcentagemNaoFeitos = 100 - porcentagemFeitos;
-                 
-                 return new Porcentagem(porcentagemFeitos, porcentagemNaoFeitos);
+
+    //Metodos de interacao entre as paginas
+    public void criarProva(String nome, LocalDate dataAplicacao, String nomeTurma){
+        Prova prova = new Prova();
+        prova.setNome(nome);
+        prova.setDataAplicacao(dataAplicacao);
+        for (Turma t : turmas){
+            if (t.getNome().equals(nomeTurma)){
+                prova.setTurma(t);
             }
-
-}
-        return new Porcentagem(0.0, 0.0);
-
-     }
-     
-     private static class Porcentagem {
-        private double feito;
-        private double naoFeito;
-
-        public Porcentagem(double feito, double naoFeito) {
-            this.feito = feito;
-            this.naoFeito = naoFeito;
         }
+        ProvaDAO DAO = new ProvaDAO();
+        DAO.create(prova);
+        provas.add(prova);
+    }
 
-        public double getFeito() {
-            return feito;
-        }
 
-        public double getNaoFeito() {
-            return naoFeito;
+    public void criarTarefa(String nome, LocalDate dataInic, LocalDate dataFinal, String nomeTurma){
+        Tarefa tarefa = new Tarefa();
+        tarefa.setNome(nome);
+        tarefa.setDataInicio(dataInic);
+        tarefa.setDataFim(dataFinal);
+        for (Turma t : turmas){
+            if (t.getNome().equals(nomeTurma)){
+                tarefa.setTurma(t);
+            }
         }
-     }
-     
+        TarefaDAO DAO = new TarefaDAO();
+        DAO.create(tarefa);
+        tarefas.add(tarefa);
+    }
+
+
+    public void criarTrabalho(String nome, LocalDate dataInic, LocalDate dataFinal, String nomeTurma){
+        Trabalho trabalho = new Trabalho();
+        trabalho.setNome(nome);
+        trabalho.setDataInicio(dataInic);
+        trabalho.setDataFim(dataFinal);
+        for (Turma t : turmas){
+            if (t.getNome().equals(nomeTurma)){
+                trabalho.setTurma(t);
+            }
+        }
+        TrabalhoDAO DAO = new TrabalhoDAO();
+        DAO.create(trabalho);
+        trabalhos.add(trabalho);
+    }
+
+
+    public void criarEscola(String nome){
+        Escola e = new Escola();
+        e.setNome(nome);
+        EscolaDAO DAO = new EscolaDAO();
+        DAO.create(e);
+        escolas.add(e);
+    }
+
+
+    public void criarTurma(String nome, String nomeEscola){
+        Turma t = new Turma();
+        t.setNome(nome);
+        for (Escola e : escolas){
+            if (e.getNome().equals(nomeEscola)){
+                t.setEscola(e);
+            }
+        }
+        TurmaDAO DAO = new TurmaDAO();
+        DAO.create(t);
+        turmas.add(t);
+    }
+
+
+    public void criarAluno(String nome, String nomeEscola, String nomeTurma){
+        Aluno aluno = new Aluno();
+        aluno.setNome(nome);
+        for (Turma t : turmas){
+            if (t.getNome().equals(nomeTurma)) {
+                aluno.addTurma(t);
+            }
+        }
+        AlunoDAO DAO = new AlunoDAO();
+        DAO.create(aluno);
+        alunos.add(aluno);
+    }
 }

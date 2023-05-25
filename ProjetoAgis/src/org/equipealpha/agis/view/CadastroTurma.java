@@ -1,9 +1,11 @@
 package org.equipealpha.agis.view;
 
-import DAO.EscolaDAO;
-import DAO.TurmaDAO;
+import org.equipealpha.agis.DAO.EscolaDAO;
+import org.equipealpha.agis.DAO.TurmaDAO;
 import javax.swing.*;
 import java.awt.*;
+
+import org.equipealpha.agis.controller.GerenciamentoEscolar;
 import org.equipealpha.agis.model.Escola;
 import org.equipealpha.agis.model.Turma;
 
@@ -26,6 +28,7 @@ public class CadastroTurma extends InterfaceBase {
     private GridBagConstraints constraints;
     private RoundedPanel painelCadastroTurma;
     private JButton btnCadastroTurma;
+    private GerenciamentoEscolar gerenciamentoEscolar = new GerenciamentoEscolar();
 
     public CadastroTurma() {
         addConteudo();
@@ -117,11 +120,7 @@ public class CadastroTurma extends InterfaceBase {
 
         btnCadastroTurma.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-                Turma t = new Turma();
-                TurmaDAO DAO = new TurmaDAO();
-                t.setNome(textoNomeCadastroTurma.getText());
-                DAO.create(t);
+                gerenciamentoEscolar.criarTurma(textoNomeCadastroTurma.getText(), comboEscolaCadastroTurma.getSelectedItem().toString());
             }
         });
 

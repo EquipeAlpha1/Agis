@@ -6,11 +6,15 @@ public class Prova {
     
     private String nome;
     private LocalDate dataAplicacao;
+    private Turma turma;
     private boolean concluido = false;
 
-    public Prova(String nome, LocalDate dataAplicacao) {
-        this.nome = nome;
-        this.dataAplicacao = dataAplicacao;
+    public Turma getTurma() {
+        return turma;
+    }
+
+    public void setTurma(Turma turma) {
+        this.turma = turma;
     }
 
     public String getNome() {

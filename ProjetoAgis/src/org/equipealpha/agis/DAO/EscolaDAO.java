@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package DAO;
+package org.equipealpha.agis.DAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,23 +14,23 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import org.equipealpha.agis.controller.GerenciamentoEscolar;
-import org.equipealpha.agis.model.Turma;
+import org.equipealpha.agis.model.Escola;
 
 /**
  *
  * @author nilber
  */
-public class TurmaDAO {
+public class EscolaDAO {
 
-    public void create(Turma t) {
+    public void create(Escola e) {
 
         Connection con = GerenciamentoEscolar.getConnection();
 
         PreparedStatement stmt = null;
 
         try {
-            stmt = con.prepareStatement("INSERT INTO turma (nome)VALUES(?)");
-            stmt.setString(1, t.getNome());
+            stmt = con.prepareStatement("INSERT INTO escola (nome) VALUES(?)");
+            stmt.setString(1, e.getNome());
 
             stmt.executeUpdate();
 
@@ -43,30 +43,30 @@ public class TurmaDAO {
 
     }
 
-    public List<Turma> read() {
+    public List<Escola> read() {
         Connection con = GerenciamentoEscolar.getConnection();
         PreparedStatement stmt = null;
         ResultSet rs = null;
-        List<Turma> turmas = new ArrayList<>();
+        List<Escola> escolas = new ArrayList<>();
 
         try {
-            stmt = con.prepareStatement("SELECT * FROM turma");
+            stmt = con.prepareStatement("SELECT * FROM escola");
             rs = stmt.executeQuery();
 
             while (rs.next()) {
-                Turma novaTurma = new Turma();
-                novaTurma.setId_turma(rs.getInt("id"));
-                novaTurma.setNome(rs.getString("nome"));
-                turmas.add(novaTurma); // Adiciona o objeto 'novaTurma' na lista 'turmas'
+                Escola escola = new Escola();
+                escola.setId_escola(rs.getInt("id"));
+                escola.setNome(rs.getString("nome"));
+                escolas.add(escola); // Adiciona o objeto 'escola' na lista 'escolas'
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(TurmaDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(EscolaDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             GerenciamentoEscolar.closeConnection(con, stmt, rs);
         }
 
-        return turmas; // Retorna a lista de objetos 'Turma' preenchida
+        return escolas; // Retorna a lista de objetos 'Escola' preenchida
     }
 
 }

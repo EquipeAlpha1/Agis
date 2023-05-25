@@ -41,12 +41,10 @@ public abstract class InterfaceBase extends JFrame implements ActionListener {
     protected URL urlPendencias;
     protected URL urlEstatisticas;
     protected URL urlCadastro;
+    private GerenciamentoEscolar gerenciamentoescolar = new GerenciamentoEscolar();
 
 
     InterfaceBase() {
-        
-        GerenciamentoEscolar gerenciamentoescolar = new GerenciamentoEscolar();
-
 //Customizando o painel da sidebar
         sidebar = new JPanel();
         sidebar.setPreferredSize(new Dimension(250,700));
@@ -76,12 +74,12 @@ public abstract class InterfaceBase extends JFrame implements ActionListener {
         imgPendenciasSidebar = new ImageIcon (urlPendencias);
         labelImgPendencias = new JLabel();
         labelImgPendencias.setIcon(imgPendenciasSidebar);
-        labelTextoPendencias = new JLabel("Pendências");
+        labelTextoPendencias = new JLabel("Lista De Atividades");
         labelTextoPendencias.setFont(new Font(" Courier New", Font.PLAIN,17));
         labelTextoPendencias.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent e) {
                 setVisible(false);
-                gerenciamentoescolar.exibirInterfacePendencias();
+                gerenciamentoescolar.exibirListaAtividades();
 
 
             }
@@ -105,7 +103,7 @@ public abstract class InterfaceBase extends JFrame implements ActionListener {
         labelImgCadastro.setIcon(imgCadastroSidebar);
         labelTextoCadastro = new JLabel("Cadastrar");
         labelTextoCadastro.setFont(new Font(" Courier New", Font.PLAIN,17));
-        String[] opcoes = {"" ,"Atividade", "Escola", "Turma", "Aluno"};
+        String[] opcoes = {"" ,"Prova","Trabalho","Tarefa", "Escola", "Turma", "Aluno"};
         opcoesCadastro = new JComboBox(opcoes);
         opcoesCadastro.setFont(new Font(" Courier New", Font.PLAIN,17));
         opcoesCadastro.setFocusable(false);
@@ -177,25 +175,29 @@ public abstract class InterfaceBase extends JFrame implements ActionListener {
         GerenciamentoEscolar gerenciamentoescolar = new GerenciamentoEscolar();
         
         if (e.getSource()==opcoesCadastro){
-            if (opcoesCadastro.getSelectedItem() == "Atividade"){
+            if (opcoesCadastro.getSelectedItem() == "Prova"){
                 setVisible(false);
-                gerenciamentoescolar.exibirCadastroAtividade();
-                
+                gerenciamentoescolar.exibirCadastroProva();
+            }
+            if (opcoesCadastro.getSelectedItem() == "Trabalho"){
+                setVisible(false);
+               gerenciamentoescolar.exibirCadastroTrabalho();
+            }
+            if (opcoesCadastro.getSelectedItem() == "Tarefa"){
+                setVisible(false);
+                gerenciamentoescolar.exibirCadastroTarefa();
             }
             if (opcoesCadastro.getSelectedItem() == "Escola"){
                 setVisible(false);
                 gerenciamentoescolar.exibirCadastroEscola();
-                
             }
             if (opcoesCadastro.getSelectedItem() == "Turma"){
                 setVisible(false);
                 gerenciamentoescolar.exibirCadastroTurma();
-
             }
             if (opcoesCadastro.getSelectedItem() == "Aluno"){
                 setVisible(false);
                 gerenciamentoescolar.exibirCadastroAluno();
-
             }
         }
     }

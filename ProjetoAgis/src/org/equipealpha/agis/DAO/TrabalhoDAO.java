@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package DAO;
+package org.equipealpha.agis.DAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,15 +14,15 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import org.equipealpha.agis.controller.GerenciamentoEscolar;
-import org.equipealpha.agis.model.Tarefa;
+import org.equipealpha.agis.model.Trabalho;
 
 /**
  *
  * @author nilber
  */
-public class TarefaDAO {
+public class TrabalhoDAO {
     
-        public void create(Tarefa tarefa) {
+        public void create(Trabalho trabalho) {
         
         Connection con = GerenciamentoEscolar.getConnection();
         
@@ -30,10 +30,10 @@ public class TarefaDAO {
 
         try {
             stmt = con.prepareStatement("INSERT INTO produto (nome,DataInicio,dataFim,concluido)VALUES(?,?,?,?)");
-            stmt.setString(1, tarefa.getNome());
-            stmt.setDate(2, java.sql.Date.valueOf(tarefa.getDataInicio()));
-            stmt.setDate(3, java.sql.Date.valueOf(tarefa.getDataFim()));
-            stmt.setBoolean(4, tarefa.isConcluido());
+            stmt.setString(1, trabalho.getNome());
+            stmt.setDate(2, java.sql.Date.valueOf(trabalho.getDataInicio()));
+            stmt.setDate(3, java.sql.Date.valueOf(trabalho.getDataFim()));
+            stmt.setBoolean(4, trabalho.isConcluido());
             
 
             stmt.executeUpdate();

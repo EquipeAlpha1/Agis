@@ -1,8 +1,10 @@
 package org.equipealpha.agis.view;
 
-import DAO.EscolaDAO;
+import org.equipealpha.agis.DAO.EscolaDAO;
 import javax.swing.*;
 import java.awt.*;
+
+import org.equipealpha.agis.controller.GerenciamentoEscolar;
 import org.equipealpha.agis.model.Escola;
 
 public class CadastroEscola extends InterfaceBase {
@@ -20,6 +22,7 @@ public class CadastroEscola extends InterfaceBase {
     private GridBagConstraints constraints;
     private RoundedPanel painelCadastroEscola;
     private JButton btnCadastroEscola;
+    private GerenciamentoEscolar gerenciamentoEscolar = new GerenciamentoEscolar();
 
     public CadastroEscola() {
         addConteudo();
@@ -83,12 +86,7 @@ public class CadastroEscola extends InterfaceBase {
 
         btnCadastroEscola.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-                Escola e = new Escola();
-                EscolaDAO DAO = new EscolaDAO();
-
-                e.setNome(textoNomeCadastroEscola.getText());
-                DAO.create(e);
+                gerenciamentoEscolar.criarEscola(textoNomeCadastroEscola.getText());
             }
         });
     }

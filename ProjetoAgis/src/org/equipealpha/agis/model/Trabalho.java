@@ -11,12 +11,15 @@ public class Trabalho {
     private String nome;
     private LocalDate dataInicio;
     private LocalDate dataFim;
+    private Turma turma;
     private boolean concluido = false;
 
-    public Trabalho(String nome, LocalDate dataInicio, LocalDate dataFim) {
-        this.nome = nome;
-        this.dataInicio = dataInicio;
-        this.dataFim = dataFim;
+    public Turma getTurma() {
+        return turma;
+    }
+
+    public void setTurma(Turma turma) {
+        this.turma = turma;
     }
 
     public String getNome() {
