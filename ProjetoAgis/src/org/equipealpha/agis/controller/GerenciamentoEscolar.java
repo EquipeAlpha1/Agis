@@ -10,6 +10,7 @@ import org.equipealpha.agis.DAO.*;
 import org.equipealpha.agis.model.Aluno;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,6 +22,8 @@ import org.equipealpha.agis.model.Turma;
 import org.equipealpha.agis.view.*;
 
 public class GerenciamentoEscolar {
+    //formato do localDate
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     //BD
     private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
@@ -144,7 +147,12 @@ public class GerenciamentoEscolar {
     public void criarProva(String nome, LocalDate dataAplicacao, String nomeTurma){
         Prova prova = new Prova();
         prova.setNome(nome);
-        prova.setDataAplicacao(dataAplicacao);
+        
+        // Formata a data no formato "dd/MM/yyyy"
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String formattedDate = dataAplicacao.format(formatter);
+        prova.setDataAplicacao(LocalDate.parse(formattedDate, formatter));
+        
         for (Turma t : turmas){
             if (t.getNome().equals(nomeTurma)){
                 prova.setTurma(t);
@@ -159,8 +167,15 @@ public class GerenciamentoEscolar {
     public void criarTarefa(String nome, LocalDate dataInic, LocalDate dataFinal, String nomeTurma){
         Tarefa tarefa = new Tarefa();
         tarefa.setNome(nome);
-        tarefa.setDataInicio(dataInic);
-        tarefa.setDataFim(dataFinal);
+        // Formata a data de início no formato "dd/MM/yyyy"
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String formattedDataInic = dataInic.format(formatter);
+        tarefa.setDataInicio(LocalDate.parse(formattedDataInic, formatter));
+
+         // Formata a data final no formato "dd/MM/yyyy"
+        String formattedDataFinal = dataFinal.format(formatter);
+        tarefa.setDataFim(LocalDate.parse(formattedDataFinal, formatter));
+         
         for (Turma t : turmas){
             if (t.getNome().equals(nomeTurma)){
                 tarefa.setTurma(t);
@@ -175,8 +190,16 @@ public class GerenciamentoEscolar {
     public void criarTrabalho(String nome, LocalDate dataInic, LocalDate dataFinal, String nomeTurma){
         Trabalho trabalho = new Trabalho();
         trabalho.setNome(nome);
-        trabalho.setDataInicio(dataInic);
-        trabalho.setDataFim(dataFinal);
+        
+         // Formata a data de início no formato "dd/MM/yyyy"
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String formattedDataInic = dataInic.format(formatter);
+        trabalho.setDataInicio(LocalDate.parse(formattedDataInic, formatter));
+
+        // Formata a data final no formato "dd/MM/yyyy"
+        String formattedDataFinal = dataFinal.format(formatter);
+        trabalho.setDataFim(LocalDate.parse(formattedDataFinal, formatter));
+        
         for (Turma t : turmas){
             if (t.getNome().equals(nomeTurma)){
                 trabalho.setTurma(t);
