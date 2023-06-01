@@ -1,6 +1,8 @@
 package org.equipealpha.agis.controller;
 
+import java.awt.*;
 import java.beans.Statement;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -12,6 +14,7 @@ import org.equipealpha.agis.model.Aluno;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.*;
 import org.equipealpha.agis.DAO.AlunoDAO;
 import org.equipealpha.agis.DAO.EscolaDAO;
 import org.equipealpha.agis.DAO.ProvaDAO;
@@ -32,6 +35,7 @@ import org.equipealpha.agis.view.InterfaceCadastroTarefa;
 import org.equipealpha.agis.view.InterfaceCadastroTrabalho;
 import org.equipealpha.agis.view.InterfacePendencias;
 import org.equipealpha.agis.view.ListaAtividades;
+import org.equipealpha.agis.view.RoundedPanel;
 import org.equipealpha.agis.view.SelectTurma;
 
 public class GerenciamentoEscolar {
@@ -255,4 +259,88 @@ public class GerenciamentoEscolar {
         DAO.create(aluno);
         alunos.add(aluno);
     }
+    
+    public RoundedPanel criarPainelProva(String nomeProva, String dataAplic, String nomeEscola, String nomeTurma){
+        
+        RoundedPanel painelProva = new RoundedPanel(20);
+        GridBagConstraints constraintsPainelProva = new GridBagConstraints();
+        painelProva.setLayout(new GridBagLayout());
+        painelProva.setBackground(Color.WHITE);
+        painelProva.setPreferredSize(new Dimension(500,150));
+
+
+        JPanel painelInfoAtividade = new JPanel();
+        painelInfoAtividade.setPreferredSize(new Dimension(350,130));
+        painelInfoAtividade.setLayout(new GridBagLayout());
+        painelInfoAtividade.setBackground(Color.white);
+
+        JLabel labelTituloProva = new JLabel( "Prova " + "- " + nomeProva);
+        labelTituloProva.setFont(new Font(Font.MONOSPACED, Font.BOLD,17));
+        constraintsPainelProva.gridx = 0;
+        constraintsPainelProva.gridy = 0;
+        constraintsPainelProva.anchor = GridBagConstraints.WEST;
+        constraintsPainelProva.insets = new Insets(0,0,15,0);
+        painelInfoAtividade.add(labelTituloProva,constraintsPainelProva);
+
+        JPanel painelDataAplic = new JPanel();
+        painelDataAplic.setLayout(new FlowLayout(FlowLayout.LEFT,0,0));
+        painelDataAplic.setBackground(Color.white);
+        JLabel labelData = new JLabel("Data de aplicação: ");
+        labelData.setFont(new Font(Font.MONOSPACED, Font.BOLD,12));
+        JLabel labelDataAplic = new JLabel(nomeTurma);
+        labelDataAplic.setFont(new Font(Font.MONOSPACED, Font.PLAIN,12));
+        painelDataAplic.add(labelData);
+        painelDataAplic.add(labelDataAplic);
+        constraintsPainelProva.gridx = 0;
+        constraintsPainelProva.gridy = 1;
+        constraintsPainelProva.insets = new Insets(0,0,0,0);
+        painelInfoAtividade.add(painelDataAplic,constraintsPainelProva);
+
+
+        JPanel painelEscola = new JPanel();
+        painelEscola.setLayout(new FlowLayout(FlowLayout.LEFT,0,0));
+        painelEscola.setBackground(Color.white);
+        JLabel labelEscola = new JLabel("Escola: ");
+        labelEscola.setFont(new Font(Font.MONOSPACED, Font.BOLD,12));
+        JLabel labelNomeEscola = new JLabel(nomeEscola);
+        labelNomeEscola.setFont(new Font(Font.MONOSPACED, Font.PLAIN,12));
+        painelEscola.add(labelEscola);
+        painelEscola.add(labelNomeEscola);
+        constraintsPainelProva.gridx = 0;
+        constraintsPainelProva.gridy = 2;
+        painelInfoAtividade.add(painelEscola,constraintsPainelProva);
+
+        JPanel painelTurma = new JPanel();
+        painelTurma.setLayout(new FlowLayout(FlowLayout.LEFT,0,0));
+        painelTurma.setBackground(Color.white);
+        JLabel labelTurma = new JLabel("Turma: ");
+        labelTurma.setFont(new Font(Font.MONOSPACED, Font.BOLD,12));
+        JLabel labelNomeTurma = new JLabel(nomeEscola);
+        labelNomeTurma.setFont(new Font(Font.MONOSPACED, Font.PLAIN,12));
+        painelTurma.add(labelTurma);
+        painelTurma.add(labelNomeTurma);
+        constraintsPainelProva.gridx = 0;
+        constraintsPainelProva.gridy = 3;
+        painelInfoAtividade.add(painelTurma,constraintsPainelProva);
+        constraintsPainelProva.gridy = 0;
+        painelProva.add(painelInfoAtividade, constraintsPainelProva);
+
+
+        RoundedPanel painelExclusaoAtividade = new RoundedPanel(20);
+        painelExclusaoAtividade.setLayout(new GridBagLayout());
+        painelExclusaoAtividade.setPreferredSize(new Dimension(100,130));
+        painelExclusaoAtividade.setBackground(Color.white);
+        URL urlLixeira = ClassLoader.getSystemResource("org/equipealpha/agis/resources/lixeira.png");
+        ImageIcon imgLixeira = new ImageIcon(urlLixeira);
+        JLabel labelLixeira = new JLabel();
+        labelLixeira.setIcon(imgLixeira);
+        painelExclusaoAtividade.add(labelLixeira);
+        constraintsPainelProva.gridx = 1;
+        constraintsPainelProva.insets = new Insets(0,20,0,10);
+        painelProva.add(painelExclusaoAtividade,constraintsPainelProva);
+
+
+        return painelProva;
+    }
+    
 }
