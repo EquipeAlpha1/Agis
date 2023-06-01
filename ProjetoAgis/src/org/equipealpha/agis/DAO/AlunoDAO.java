@@ -23,22 +23,27 @@ import org.equipealpha.agis.model.Aluno;
 public class AlunoDAO {
 
     public void create(Aluno a) {
-
-        Connection con = GerenciamentoEscolar.getConnection();
-
+        Connection conn = null;
         PreparedStatement stmt = null;
 
         try {
-            stmt = con.prepareStatement("INSERT INTO aluno (nome)VALUES(?)");
+            conn = GerenciamentoEscolar.getConnection();
+
+            // Altere a consulta SQL para incluir a coluna da chave estrangeira
+            String sql = "INSERT INTO aluno (nome, fk_Turma_id, Fk_Escola_id) VALUES (?, ?, ?)";
+
+            stmt = conn.prepareStatement(sql);
             stmt.setString(1, a.getNome());
+            stmt.setInt(2, a.getFk_Turma_id());
+            stmt.setInt(3, a.getFk_Escola_id());
 
             stmt.executeUpdate();
 
             JOptionPane.showMessageDialog(null, "Salvo com sucesso!");
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao salvar" + ex);
+            JOptionPane.showMessageDialog(null, "Erro ao salvar: " + ex.getMessage());
         } finally {
-            GerenciamentoEscolar.closeConnection(con, stmt);
+            GerenciamentoEscolar.closeConnection(conn, stmt);
         }
     }
 

@@ -11,6 +11,16 @@ import org.equipealpha.agis.model.Turma;
 
 public class CadastroTurma extends InterfaceBase {
 
+    private Escola obterEscolaPorNome(String nomeEscola) {
+        EscolaDAO escolaDAO = new EscolaDAO();
+        for (Escola e : escolaDAO.read()) {
+            if (e.getNome().equals(nomeEscola)) {
+                return e;
+            }
+        }
+        return null; // Retorna null se a escola não for encontrada
+    }
+
     //paineis
     private JPanel painelTituloCadastroTurma;
     private JPanel painelNomeCadastroTurma;
@@ -73,7 +83,7 @@ public class CadastroTurma extends InterfaceBase {
         constraints.gridy = 0; // Ajuste aqui para definir a linha correta
         constraints.gridx = 0;
         labelNomeCadastroTurma = new JLabel("Nome:");
-        labelNomeCadastroTurma.setFont(new Font("Courier New", Font.PLAIN,13));
+        labelNomeCadastroTurma.setFont(new Font("Courier New", Font.PLAIN, 13));
         painelNomeCadastroTurma.add(labelNomeCadastroTurma, constraints);
         textoNomeCadastroTurma = new JTextField(20);
         constraints.gridx = 1;
@@ -89,8 +99,8 @@ public class CadastroTurma extends InterfaceBase {
         constraints.gridy = 0;
         constraints.gridx = 0;
         labelEscolaCadastroTurma = new JLabel("Escola:");
-        labelEscolaCadastroTurma.setFont(new Font("Courier New", Font.PLAIN,13));
-        painelEscolaCadastroTurma.add(labelEscolaCadastroTurma,constraints);
+        labelEscolaCadastroTurma.setFont(new Font("Courier New", Font.PLAIN, 13));
+        painelEscolaCadastroTurma.add(labelEscolaCadastroTurma, constraints);
         String[] opcoesEscolaCadastroTurma = {""};
         comboEscolaCadastroTurma = new JComboBox<>(opcoesEscolaCadastroTurma);
         constraints.gridx = 1;
@@ -120,10 +130,25 @@ public class CadastroTurma extends InterfaceBase {
 
         btnCadastroTurma.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                gerenciamentoEscolar.criarTurma(textoNomeCadastroTurma.getText(), comboEscolaCadastroTurma.getSelectedItem().toString());
+                Turma t = new Turma();
+                TurmaDAO DAO = new TurmaDAO();
+                t.setNome(textoNomeCadastroTurma.getText());
+
+                // Obter a escola selecionada no JComboBox
+                String nomeEscola = (String) comboEscolaCadastroTurma.getSelectedItem();
+                Escola escola = obterEscolaPorNome(nomeEscola);
+
+                // Verificar se a escola foi encontrada e configurar a chave estrangeira
+                if (escola != null) {
+                    t.setFk_Escola_id(escola.getId_escola());
+                } else {
+                    // Lógica para lidar com o caso em que a escola não foi encontrada
+                    JOptionPane.showMessageDialog(null, "Escola não encontrada. Verifique o nome e tente novamente.");
+                    return; // Encerrar o método caso a escola não seja encontrada
+                }
+
+                DAO.create(t);
             }
         });
-
-
     }
 }
