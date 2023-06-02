@@ -4,18 +4,17 @@ import java.time.LocalDate;
 
 public class Tarefa {
     
+    private int id_tarefa;
     private String nome;
     private LocalDate dataInicio;
     private LocalDate dataFim;
-    private Turma turma;
-    private boolean concluido = false;
 
-    public Turma getTurma() {
-        return turma;
+    public int getId_tarefa() {
+        return id_tarefa;
     }
 
-    public void setTurma(Turma turma) {
-        this.turma = turma;
+    public void setId_tarefa(int id_tarefa) {
+        this.id_tarefa = id_tarefa;
     }
 
     public String getNome() {
@@ -42,11 +41,5 @@ public class Tarefa {
         this.dataFim = dataFim;
     }
 
-    public boolean isConcluido() {
-        return concluido;
-    }
 
-    public void setConcluido(boolean concluido) {
-        this.concluido = concluido;
-    }
 }

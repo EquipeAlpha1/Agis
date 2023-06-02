@@ -8,18 +8,17 @@ import java.time.LocalDate;
 
 public class Trabalho {
     
+    private int id_trabalho;
     private String nome;
     private LocalDate dataInicio;
     private LocalDate dataFim;
-    private Turma turma;
-    private boolean concluido = false;
 
-    public Turma getTurma() {
-        return turma;
+    public int getId_trabalho() {
+        return id_trabalho;
     }
 
-    public void setTurma(Turma turma) {
-        this.turma = turma;
+    public void setId_trabalho(int id_trabalho) {
+        this.id_trabalho = id_trabalho;
     }
 
     public String getNome() {
@@ -45,13 +44,5 @@ public class Trabalho {
     public void setDataFim(LocalDate dataFim) {
         this.dataFim = dataFim;
     }
-
-    public boolean isConcluido() {
-        return concluido;
-    }
-
-    public void setConcluido(boolean concluido) {
-        this.concluido = concluido;
-    }  
     
 }

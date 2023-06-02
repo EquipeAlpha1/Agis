@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Aluno {
 
-private int id_aluno;
+    private int id_aluno;
     private String nome;
     private int fk_Escola_id;
     private int fk_Turma_id;
@@ -12,7 +12,6 @@ private int id_aluno;
     private ArrayList<Prova> provas = new ArrayList<>();
     private ArrayList<Trabalho> trabalhos = new ArrayList<>();
     private ArrayList<Tarefa> tarefas = new ArrayList<>();
-
 
     public String getNome() {
         return nome;
@@ -45,8 +44,6 @@ private int id_aluno;
     public void setFk_Turma_id(int fk_Turma_id) {
         this.fk_Turma_id = fk_Turma_id;
     }
-    
-    
 
     public void addTurmaAluno(Turma turma) {
         turmas.add(turma);

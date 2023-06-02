@@ -157,102 +157,103 @@ public class GerenciamentoEscolar {
         interfaceCadastroTarefa.setVisible(true);
     }
 
-    //Metodos de interacao entre as paginas
-    public void criarProva(String nome, LocalDate dataAplicacao, String nomeTurma) {
-        Prova prova = new Prova();
-        prova.setNome(nome);
-
-        // Formata a data no formato "dd/MM/yyyy"
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        String formattedDate = dataAplicacao.format(formatter);
-        prova.setDataAplicacao(LocalDate.parse(formattedDate, formatter));
-
-        for (Turma t : turmas) {
-            if (t.getNome().equals(nomeTurma)) {
-                prova.setTurma(t);
-            }
-        }
-        ProvaDAO DAO = new ProvaDAO();
-        DAO.create(prova);
-        provas.add(prova);
-    }
-
-    public void criarTarefa(String nome, LocalDate dataInic, LocalDate dataFinal, String nomeTurma) {
-        Tarefa tarefa = new Tarefa();
-        tarefa.setNome(nome);
-        // Formata a data de início no formato "dd/MM/yyyy"
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        String formattedDataInic = dataInic.format(formatter);
-        tarefa.setDataInicio(LocalDate.parse(formattedDataInic, formatter));
-
-        // Formata a data final no formato "dd/MM/yyyy"
-        String formattedDataFinal = dataFinal.format(formatter);
-        tarefa.setDataFim(LocalDate.parse(formattedDataFinal, formatter));
-
-        for (Turma t : turmas) {
-            if (t.getNome().equals(nomeTurma)) {
-                tarefa.setTurma(t);
-            }
-        }
-        TarefaDAO DAO = new TarefaDAO();
-        DAO.create(tarefa);
-        tarefas.add(tarefa);
-    }
-
-    public void criarTrabalho(String nome, LocalDate dataInic, LocalDate dataFinal, String nomeTurma) {
-        Trabalho trabalho = new Trabalho();
-        trabalho.setNome(nome);
-
-        // Formata a data de início no formato "dd/MM/yyyy"
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        String formattedDataInic = dataInic.format(formatter);
-        trabalho.setDataInicio(LocalDate.parse(formattedDataInic, formatter));
-
-        // Formata a data final no formato "dd/MM/yyyy"
-        String formattedDataFinal = dataFinal.format(formatter);
-        trabalho.setDataFim(LocalDate.parse(formattedDataFinal, formatter));
-
-        for (Turma t : turmas) {
-            if (t.getNome().equals(nomeTurma)) {
-                trabalho.setTurma(t);
-            }
-        }
-        TrabalhoDAO DAO = new TrabalhoDAO();
-        DAO.create(trabalho);
-        trabalhos.add(trabalho);
-    }
-
-    public void criarEscola(String nome) {
-        Escola e = new Escola();
-        e.setNome(nome);
-        EscolaDAO DAO = new EscolaDAO();
-        DAO.create(e);
-        escolas.add(e);
-    }
-
-    public void criarTurma(String nome, String nomeEscola) {
-        Turma t = new Turma();
-        t.setNome(nome);
-        for (Escola e : escolas) {
-            if (e.getNome().equals(nomeEscola)) {
-                t.setEscola(e);
-            }
-        }
-        TurmaDAO DAO = new TurmaDAO();
-        DAO.create(t);
-        turmas.add(t);
-    }
-
-    public void criarAluno(String nome, String nomeEscola, String nomeTurma) {
-        Aluno aluno = new Aluno();
-        aluno.setNome(nome);
-        for (Turma t : turmas) {
-            if (t.getNome().equals(nomeTurma)) {
-               // aluno.addTurma(t);
-            }
-        }
-        AlunoDAO DAO = new AlunoDAO();
-        DAO.create(aluno);
-        alunos.add(aluno);
-    }
 }
+
+//    //Metodos de interacao entre as paginas
+//    public void criarProva(String nome, LocalDate dataAplicacao, String nomeTurma) {
+//        Prova prova = new Prova();
+//        prova.setNome(nome);
+//
+//        // Formata a data no formato "dd/MM/yyyy"
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+//        String formattedDate = dataAplicacao.format(formatter);
+//        prova.setDataAplicacao(LocalDate.parse(formattedDate, formatter));
+//
+//        for (Turma t : turmas) {
+//            if (t.getNome().equals(nomeTurma)) {
+//                prova.setTurma(t);
+//            }
+//        }
+//        ProvaDAO DAO = new ProvaDAO();
+//        DAO.create(prova);
+//        provas.add(prova);
+//    }
+
+//    public void criarTarefa(String nome, LocalDate dataInic, LocalDate dataFinal, String nomeTurma) {
+//        Tarefa tarefa = new Tarefa();
+//        tarefa.setNome(nome);
+//        // Formata a data de início no formato "dd/MM/yyyy"
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+//        String formattedDataInic = dataInic.format(formatter);
+//        tarefa.setDataInicio(LocalDate.parse(formattedDataInic, formatter));
+//
+//        // Formata a data final no formato "dd/MM/yyyy"
+//        String formattedDataFinal = dataFinal.format(formatter);
+//        tarefa.setDataFim(LocalDate.parse(formattedDataFinal, formatter));
+//
+//        for (Turma t : turmas) {
+//            if (t.getNome().equals(nomeTurma)) {
+//                tarefa.setTurma(t);
+//            }
+//        }
+//        TarefaDAO DAO = new TarefaDAO();
+//        DAO.create(tarefa);
+//        tarefas.add(tarefa);
+//    }
+//
+//    public void criarTrabalho(String nome, LocalDate dataInic, LocalDate dataFinal, String nomeTurma) {
+//        Trabalho trabalho = new Trabalho();
+//        trabalho.setNome(nome);
+//
+//        // Formata a data de início no formato "dd/MM/yyyy"
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+//        String formattedDataInic = dataInic.format(formatter);
+//        trabalho.setDataInicio(LocalDate.parse(formattedDataInic, formatter));
+//
+//        // Formata a data final no formato "dd/MM/yyyy"
+//        String formattedDataFinal = dataFinal.format(formatter);
+//        trabalho.setDataFim(LocalDate.parse(formattedDataFinal, formatter));
+//
+//        for (Turma t : turmas) {
+//            if (t.getNome().equals(nomeTurma)) {
+//                trabalho.setTurma(t);
+//            }
+//        }
+//        TrabalhoDAO DAO = new TrabalhoDAO();
+//        DAO.create(trabalho);
+//        trabalhos.add(trabalho);
+//    }
+//
+//    public void criarEscola(String nome) {
+//        Escola e = new Escola();
+//        e.setNome(nome);
+//        EscolaDAO DAO = new EscolaDAO();
+//        DAO.create(e);
+//        escolas.add(e);
+//    }
+//
+//    public void criarTurma(String nome, String nomeEscola) {
+//        Turma t = new Turma();
+//        t.setNome(nome);
+//        for (Escola e : escolas) {
+//            if (e.getNome().equals(nomeEscola)) {
+//                t.setEscola(e);
+//            }
+//        }
+//        TurmaDAO DAO = new TurmaDAO();
+//        DAO.create(t);
+//        turmas.add(t);
+//    }
+//
+//    public void criarAluno(String nome, String nomeEscola, String nomeTurma) {
+//        Aluno aluno = new Aluno();
+//        aluno.setNome(nome);
+//        for (Turma t : turmas) {
+//            if (t.getNome().equals(nomeTurma)) {
+//               // aluno.addTurma(t);
+//            }
+//        }
+//        AlunoDAO DAO = new AlunoDAO();
+//        DAO.create(aluno);
+//        alunos.add(aluno);
+//    }

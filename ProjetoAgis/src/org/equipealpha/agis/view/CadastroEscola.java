@@ -3,6 +3,7 @@ package org.equipealpha.agis.view;
 import org.equipealpha.agis.DAO.EscolaDAO;
 import javax.swing.*;
 import java.awt.*;
+import org.equipealpha.agis.DAO.AlunoDAO;
 
 import org.equipealpha.agis.controller.GerenciamentoEscolar;
 import org.equipealpha.agis.model.Escola;
@@ -86,7 +87,11 @@ public class CadastroEscola extends InterfaceBase {
 
         btnCadastroEscola.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                gerenciamentoEscolar.criarEscola(textoNomeCadastroEscola.getText());
+                Escola e = new Escola();
+                EscolaDAO EscolaDAO = new EscolaDAO();
+                e.setNome(textoNomeCadastroEscola.getText());
+                
+                EscolaDAO.create(e);
             }
         });
     }

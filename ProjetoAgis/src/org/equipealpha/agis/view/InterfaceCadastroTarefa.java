@@ -1,14 +1,42 @@
 //EXEMPLO DE COMO MUDAR O O CONTEUDO DA INTERFACE BASE
 //NÃO MEXER NO PAINEL SIDEBAR, SOMENTE NO CONTEUDO
-
 package org.equipealpha.agis.view;
 
 import java.awt.*;
 import javax.swing.*;
 import com.toedter.calendar.JDateChooser;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
+import org.equipealpha.agis.DAO.EscolaDAO;
+import org.equipealpha.agis.DAO.TarefaDAO;
+import org.equipealpha.agis.DAO.TurmaDAO;
+import org.equipealpha.agis.model.Escola;
+import org.equipealpha.agis.model.Tarefa;
+import org.equipealpha.agis.model.Turma;
 
+public class InterfaceCadastroTarefa extends InterfaceBase {
 
-public class InterfaceCadastroTarefa extends InterfaceBase{
+    private Escola obterEscolaPorNome(String nomeEscola) {
+        EscolaDAO escolaDAO = new EscolaDAO();
+        for (Escola e : escolaDAO.read()) {
+            if (e.getNome().equals(nomeEscola)) {
+                return e;
+            }
+        }
+        return null; // Retorna null se a escola não for encontrada
+    }
+
+    private Turma obterTurmaPorNome(String nomeTurma) {
+        TurmaDAO turmaDAO = new TurmaDAO();
+        for (Turma t : turmaDAO.read()) {
+            if (t.getNome().equals(nomeTurma)) {
+                return t;
+            }
+        }
+        return null; // Retorna null se a turma não for encontrada
+    }
 
     //panels
     private JPanel painelTituloCadastroTarefa;
@@ -64,17 +92,15 @@ public class InterfaceCadastroTarefa extends InterfaceBase{
         painelCadastroTarefa.setBackground(new Color(255, 255, 255, 175));
         degradeconteudo.add(painelCadastroTarefa, constraints);
 
-
         painelTituloCadastroTarefa = new JPanel();
         painelTituloCadastroTarefa.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
         painelTituloCadastroTarefa.setBackground(new Color(255, 255, 255, 0));
         constraints.gridx = 0;
         constraints.gridy = 0;
         labelTituloCadastroTarefa = new JLabel("CADASTRAR TAREFA");
-        labelTituloCadastroTarefa.setFont(new Font("Courier New", Font.BOLD,20));
+        labelTituloCadastroTarefa.setFont(new Font("Courier New", Font.BOLD, 20));
         painelTituloCadastroTarefa.add(labelTituloCadastroTarefa);
-        painelCadastroTarefa.add(painelTituloCadastroTarefa,constraints);
-
+        painelCadastroTarefa.add(painelTituloCadastroTarefa, constraints);
 
         painelNomeCadastroTarefa = new JPanel();
         painelNomeCadastroTarefa.setLayout(new FlowLayout(FlowLayout.LEFT));
@@ -82,25 +108,24 @@ public class InterfaceCadastroTarefa extends InterfaceBase{
         constraints.gridy = 1;
         constraints.gridx = 0;
         labelNomeCadastroTarefa = new JLabel("Nome:");
-        labelNomeCadastroTarefa.setFont(new Font("Courier New", Font.PLAIN,13));
+        labelNomeCadastroTarefa.setFont(new Font("Courier New", Font.PLAIN, 13));
         textoNomeCadastroTarefa = new JTextField(30);
         painelNomeCadastroTarefa.add(labelNomeCadastroTarefa);
         painelNomeCadastroTarefa.add(textoNomeCadastroTarefa);
-        painelCadastroTarefa.add(painelNomeCadastroTarefa,constraints);
-
+        painelCadastroTarefa.add(painelNomeCadastroTarefa, constraints);
 
         painelDataIniCadastroTarefa = new JPanel();
         painelDataIniCadastroTarefa.setLayout(new GridBagLayout());
         painelDataIniCadastroTarefa.setBackground(new Color(255, 255, 255, 0));
         labelDataIniCadastroTarefa = new JLabel("Data de início:");
-        labelDataIniCadastroTarefa.setFont(new Font("Courier New", Font.PLAIN,13));
+        labelDataIniCadastroTarefa.setFont(new Font("Courier New", Font.PLAIN, 13));
         constraints.gridy = 0;
         constraints.anchor = GridBagConstraints.WEST;
-        painelDataIniCadastroTarefa.add(labelDataIniCadastroTarefa,constraints);
+        painelDataIniCadastroTarefa.add(labelDataIniCadastroTarefa, constraints);
         dataIniCadastroTarefa = new JDateChooser();
         dataIniCadastroTarefa.setDateFormatString("dd/MM/yyyy");
         constraints.gridx = 1;
-        painelDataIniCadastroTarefa.add(dataIniCadastroTarefa,constraints);
+        painelDataIniCadastroTarefa.add(dataIniCadastroTarefa, constraints);
         constraints.gridx = 0;
         constraints.gridy = 2;
         painelCadastroTarefa.add(painelDataIniCadastroTarefa, constraints);
@@ -109,13 +134,13 @@ public class InterfaceCadastroTarefa extends InterfaceBase{
         painelDataFimCadastroTarefa.setLayout(new GridBagLayout());
         painelDataFimCadastroTarefa.setBackground(new Color(255, 255, 255, 0));
         labelDataFimCadastroTarefa = new JLabel("Data de encerramento:");
-        labelDataFimCadastroTarefa.setFont(new Font("Courier New", Font.PLAIN,13));
+        labelDataFimCadastroTarefa.setFont(new Font("Courier New", Font.PLAIN, 13));
         constraints.gridy = 0;
-        painelDataFimCadastroTarefa.add(labelDataFimCadastroTarefa,constraints);
+        painelDataFimCadastroTarefa.add(labelDataFimCadastroTarefa, constraints);
         dataFimCadastroTarefa = new JDateChooser();
         dataFimCadastroTarefa.setDateFormatString("dd/MM/yyyy");
         constraints.gridx = 1;
-        painelDataFimCadastroTarefa.add(dataFimCadastroTarefa,constraints);
+        painelDataFimCadastroTarefa.add(dataFimCadastroTarefa, constraints);
         constraints.gridx = 0;
         constraints.gridy = 3;
         painelCadastroTarefa.add(painelDataFimCadastroTarefa, constraints);
@@ -124,7 +149,7 @@ public class InterfaceCadastroTarefa extends InterfaceBase{
         painelComboEscola.setLayout(new GridBagLayout());
         painelComboEscola.setBackground(new Color(255, 255, 255, 0));
         labelEscolaCadastroTarefa = new JLabel("Escola:");
-        labelEscolaCadastroTarefa.setFont(new Font("Courier New", Font.PLAIN,13));
+        labelEscolaCadastroTarefa.setFont(new Font("Courier New", Font.PLAIN, 13));
         constraints.gridy = 0;
         painelComboEscola.add(labelEscolaCadastroTarefa, constraints);
         String[] opcoesEscolaCadastroTarefa = {""};
@@ -135,11 +160,16 @@ public class InterfaceCadastroTarefa extends InterfaceBase{
         constraints.gridy = 4;
         painelCadastroTarefa.add(painelComboEscola, constraints);
 
+        EscolaDAO daoEscola = new EscolaDAO();
+        for (Escola e : daoEscola.read()) {
+            comboEscolaCadastroTarefa.addItem(e.getNome());
+        }
+
         painelComboTurma = new JPanel();
         painelComboTurma.setLayout(new GridBagLayout());
         painelComboTurma.setBackground(new Color(255, 255, 255, 0));
         labelTurmaCadastroTarefa = new JLabel("Turma:");
-        labelTurmaCadastroTarefa.setFont(new Font("Courier New", Font.PLAIN,13));
+        labelTurmaCadastroTarefa.setFont(new Font("Courier New", Font.PLAIN, 13));
         constraints.gridy = 0;
         painelComboTurma.add(labelTurmaCadastroTarefa, constraints);
         String[] opcoesTurmaCadastroTarefa = {""};
@@ -150,7 +180,10 @@ public class InterfaceCadastroTarefa extends InterfaceBase{
         constraints.gridy = 5;
         painelCadastroTarefa.add(painelComboTurma, constraints);
 
-
+        TurmaDAO daoTurma = new TurmaDAO();
+        for (Turma e : daoTurma.read()) {
+            comboTurmaCadastroTarefa.addItem(e.getNome());
+        }
 
         painelBtnCadastroTarefa = new JPanel();
         painelBtnCadastroTarefa.setLayout(new FlowLayout(FlowLayout.RIGHT));
@@ -159,10 +192,44 @@ public class InterfaceCadastroTarefa extends InterfaceBase{
         constraints.gridx = 0;
         constraints.anchor = GridBagConstraints.CENTER;
         btnCadastroTarefa = new JButton("Cadastrar");
-        btnCadastroTarefa.setFont(new Font("Courier New", Font.PLAIN,13));
+        btnCadastroTarefa.setFont(new Font("Courier New", Font.PLAIN, 13));
         btnCadastroTarefa.setFocusable(false);
         painelBtnCadastroTarefa.add(btnCadastroTarefa);
-        painelCadastroTarefa.add(painelBtnCadastroTarefa,constraints);
+        painelCadastroTarefa.add(painelBtnCadastroTarefa, constraints);
+
+        btnCadastroTarefa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Tarefa tarefa = new Tarefa();
+                TarefaDAO tarefaDAO = new TarefaDAO();
+                tarefa.setNome(textoNomeCadastroTarefa.getText());
+
+                // Obter a data selecionada do JDateChooser
+                Date dataSelecionada = dataIniCadastroTarefa.getDate();
+                if (dataSelecionada != null) {
+                    // Converter a data para LocalDate
+                    Instant instant = dataSelecionada.toInstant();
+                    ZoneId zoneId = ZoneId.systemDefault();
+                    LocalDate setDataInicio = instant.atZone(zoneId).toLocalDate();
+                    tarefa.setDataInicio(setDataInicio);
+                } else {
+                    tarefa.setDataInicio(null);
+                }
+
+                // Obter a data selecionada do JDateChooser
+                Date dataSelecionada2 = dataFimCadastroTarefa.getDate();
+                if (dataSelecionada != null) {
+                    // Converter a data para LocalDate
+                    Instant instant = dataSelecionada2.toInstant();
+                    ZoneId zoneId = ZoneId.systemDefault();
+                    LocalDate dataFim = instant.atZone(zoneId).toLocalDate();
+                    tarefa.setDataFim(dataFim);
+                } else {
+                    tarefa.setDataFim(null);
+                }
+
+                tarefaDAO.create(tarefa);
+            }
+        });
 
     }
 

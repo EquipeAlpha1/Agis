@@ -4,19 +4,18 @@ import java.time.LocalDate;
 
 public class Prova {
     
+    private int id_prova;
     private String nome;
     private LocalDate dataAplicacao;
-    private Turma turma;
-    private boolean concluido = false;
 
-    public Turma getTurma() {
-        return turma;
+    public int getId_prova() {
+        return id_prova;
     }
 
-    public void setTurma(Turma turma) {
-        this.turma = turma;
+    public void setId_prova(int id_prova) {
+        this.id_prova = id_prova;
     }
-
+    
     public String getNome() {
         return nome;
     }
@@ -32,12 +31,4 @@ public class Prova {
     public void setDataAplicacao(LocalDate dataAplicacao) {
         this.dataAplicacao = dataAplicacao;
     }
-
-    public boolean isConcluido() {
-        return concluido;
-    }
-
-    public void setConcluido(boolean concluido) {
-        this.concluido = concluido;
-    }  
 }
