@@ -1,6 +1,8 @@
 package org.equipealpha.agis.controller;
 
+import java.awt.*;
 import java.beans.Statement;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -12,6 +14,7 @@ import org.equipealpha.agis.model.Aluno;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.*;
 import org.equipealpha.agis.DAO.AlunoDAO;
 import org.equipealpha.agis.DAO.EscolaDAO;
 import org.equipealpha.agis.DAO.ProvaDAO;
@@ -32,6 +35,7 @@ import org.equipealpha.agis.view.InterfaceCadastroTarefa;
 import org.equipealpha.agis.view.InterfaceCadastroTrabalho;
 import org.equipealpha.agis.view.InterfacePendencias;
 import org.equipealpha.agis.view.ListaAtividades;
+import org.equipealpha.agis.view.RoundedPanel;
 import org.equipealpha.agis.view.SelectTurma;
 
 public class GerenciamentoEscolar {
@@ -157,6 +161,191 @@ public class GerenciamentoEscolar {
         interfaceCadastroTarefa.setVisible(true);
     }
 
+<<<<<<< HEAD
+=======
+    //Metodos de interacao entre as paginas
+    public void criarProva(String nome, LocalDate dataAplicacao, String nomeTurma) {
+        Prova prova = new Prova();
+        prova.setNome(nome);
+
+        // Formata a data no formato "dd/MM/yyyy"
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String formattedDate = dataAplicacao.format(formatter);
+        prova.setDataAplicacao(LocalDate.parse(formattedDate, formatter));
+
+        for (Turma t : turmas) {
+            if (t.getNome().equals(nomeTurma)) {
+                prova.setTurma(t);
+            }
+        }
+        ProvaDAO DAO = new ProvaDAO();
+        DAO.create(prova);
+        provas.add(prova);
+    }
+
+    public void criarTarefa(String nome, LocalDate dataInic, LocalDate dataFinal, String nomeTurma) {
+        Tarefa tarefa = new Tarefa();
+        tarefa.setNome(nome);
+        // Formata a data de início no formato "dd/MM/yyyy"
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String formattedDataInic = dataInic.format(formatter);
+        tarefa.setDataInicio(LocalDate.parse(formattedDataInic, formatter));
+
+        // Formata a data final no formato "dd/MM/yyyy"
+        String formattedDataFinal = dataFinal.format(formatter);
+        tarefa.setDataFim(LocalDate.parse(formattedDataFinal, formatter));
+
+        for (Turma t : turmas) {
+            if (t.getNome().equals(nomeTurma)) {
+                tarefa.setTurma(t);
+            }
+        }
+        TarefaDAO DAO = new TarefaDAO();
+        DAO.create(tarefa);
+        tarefas.add(tarefa);
+    }
+
+    public void criarTrabalho(String nome, LocalDate dataInic, LocalDate dataFinal, String nomeTurma) {
+        Trabalho trabalho = new Trabalho();
+        trabalho.setNome(nome);
+
+        // Formata a data de início no formato "dd/MM/yyyy"
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String formattedDataInic = dataInic.format(formatter);
+        trabalho.setDataInicio(LocalDate.parse(formattedDataInic, formatter));
+
+        // Formata a data final no formato "dd/MM/yyyy"
+        String formattedDataFinal = dataFinal.format(formatter);
+        trabalho.setDataFim(LocalDate.parse(formattedDataFinal, formatter));
+
+        for (Turma t : turmas) {
+            if (t.getNome().equals(nomeTurma)) {
+                trabalho.setTurma(t);
+            }
+        }
+        TrabalhoDAO DAO = new TrabalhoDAO();
+        DAO.create(trabalho);
+        trabalhos.add(trabalho);
+    }
+
+    public void criarEscola(String nome) {
+        Escola e = new Escola();
+        e.setNome(nome);
+        EscolaDAO DAO = new EscolaDAO();
+        DAO.create(e);
+        escolas.add(e);
+    }
+
+    public void criarTurma(String nome, String nomeEscola) {
+        Turma t = new Turma();
+        t.setNome(nome);
+        for (Escola e : escolas) {
+            if (e.getNome().equals(nomeEscola)) {
+                t.setEscola(e);
+            }
+        }
+        TurmaDAO DAO = new TurmaDAO();
+        DAO.create(t);
+        turmas.add(t);
+    }
+
+    public void criarAluno(String nome, String nomeEscola, String nomeTurma) {
+        Aluno aluno = new Aluno();
+        aluno.setNome(nome);
+        for (Turma t : turmas) {
+            if (t.getNome().equals(nomeTurma)) {
+               // aluno.addTurma(t);
+            }
+        }
+        AlunoDAO DAO = new AlunoDAO();
+        DAO.create(aluno);
+        alunos.add(aluno);
+    }
+    
+    public RoundedPanel criarPainelProva(String nomeProva, String dataAplic, String nomeEscola, String nomeTurma){
+        
+        RoundedPanel painelProva = new RoundedPanel(20);
+        GridBagConstraints constraintsPainelProva = new GridBagConstraints();
+        painelProva.setLayout(new GridBagLayout());
+        painelProva.setBackground(Color.WHITE);
+        painelProva.setPreferredSize(new Dimension(500,150));
+
+
+        JPanel painelInfoAtividade = new JPanel();
+        painelInfoAtividade.setPreferredSize(new Dimension(350,130));
+        painelInfoAtividade.setLayout(new GridBagLayout());
+        painelInfoAtividade.setBackground(Color.white);
+
+        JLabel labelTituloProva = new JLabel( "Prova " + "- " + nomeProva);
+        labelTituloProva.setFont(new Font(Font.MONOSPACED, Font.BOLD,17));
+        constraintsPainelProva.gridx = 0;
+        constraintsPainelProva.gridy = 0;
+        constraintsPainelProva.anchor = GridBagConstraints.WEST;
+        constraintsPainelProva.insets = new Insets(0,0,15,0);
+        painelInfoAtividade.add(labelTituloProva,constraintsPainelProva);
+
+        JPanel painelDataAplic = new JPanel();
+        painelDataAplic.setLayout(new FlowLayout(FlowLayout.LEFT,0,0));
+        painelDataAplic.setBackground(Color.white);
+        JLabel labelData = new JLabel("Data de aplicação: ");
+        labelData.setFont(new Font(Font.MONOSPACED, Font.BOLD,12));
+        JLabel labelDataAplic = new JLabel(nomeTurma);
+        labelDataAplic.setFont(new Font(Font.MONOSPACED, Font.PLAIN,12));
+        painelDataAplic.add(labelData);
+        painelDataAplic.add(labelDataAplic);
+        constraintsPainelProva.gridx = 0;
+        constraintsPainelProva.gridy = 1;
+        constraintsPainelProva.insets = new Insets(0,0,0,0);
+        painelInfoAtividade.add(painelDataAplic,constraintsPainelProva);
+
+
+        JPanel painelEscola = new JPanel();
+        painelEscola.setLayout(new FlowLayout(FlowLayout.LEFT,0,0));
+        painelEscola.setBackground(Color.white);
+        JLabel labelEscola = new JLabel("Escola: ");
+        labelEscola.setFont(new Font(Font.MONOSPACED, Font.BOLD,12));
+        JLabel labelNomeEscola = new JLabel(nomeEscola);
+        labelNomeEscola.setFont(new Font(Font.MONOSPACED, Font.PLAIN,12));
+        painelEscola.add(labelEscola);
+        painelEscola.add(labelNomeEscola);
+        constraintsPainelProva.gridx = 0;
+        constraintsPainelProva.gridy = 2;
+        painelInfoAtividade.add(painelEscola,constraintsPainelProva);
+
+        JPanel painelTurma = new JPanel();
+        painelTurma.setLayout(new FlowLayout(FlowLayout.LEFT,0,0));
+        painelTurma.setBackground(Color.white);
+        JLabel labelTurma = new JLabel("Turma: ");
+        labelTurma.setFont(new Font(Font.MONOSPACED, Font.BOLD,12));
+        JLabel labelNomeTurma = new JLabel(nomeEscola);
+        labelNomeTurma.setFont(new Font(Font.MONOSPACED, Font.PLAIN,12));
+        painelTurma.add(labelTurma);
+        painelTurma.add(labelNomeTurma);
+        constraintsPainelProva.gridx = 0;
+        constraintsPainelProva.gridy = 3;
+        painelInfoAtividade.add(painelTurma,constraintsPainelProva);
+        constraintsPainelProva.gridy = 0;
+        painelProva.add(painelInfoAtividade, constraintsPainelProva);
+
+
+        RoundedPanel painelExclusaoAtividade = new RoundedPanel(20);
+        painelExclusaoAtividade.setLayout(new GridBagLayout());
+        painelExclusaoAtividade.setPreferredSize(new Dimension(100,130));
+        painelExclusaoAtividade.setBackground(Color.white);
+        URL urlLixeira = ClassLoader.getSystemResource("org/equipealpha/agis/resources/lixeira.png");
+        ImageIcon imgLixeira = new ImageIcon(urlLixeira);
+        JLabel labelLixeira = new JLabel();
+        labelLixeira.setIcon(imgLixeira);
+        painelExclusaoAtividade.add(labelLixeira);
+        constraintsPainelProva.gridx = 1;
+        constraintsPainelProva.insets = new Insets(0,20,0,10);
+        painelProva.add(painelExclusaoAtividade,constraintsPainelProva);
+
+
+        return painelProva;
+    }
+    
+>>>>>>> 22c4da69a08df4fad31c504d27f22bf13a00a910
 }
 
 //    //Metodos de interacao entre as paginas
