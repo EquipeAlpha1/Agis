@@ -12,6 +12,7 @@ import java.util.Date;
 import org.equipealpha.agis.DAO.EscolaDAO;
 import org.equipealpha.agis.DAO.TrabalhoDAO;
 import org.equipealpha.agis.DAO.TurmaDAO;
+import org.equipealpha.agis.controller.GerenciamentoEscolar;
 import org.equipealpha.agis.model.Escola;
 import org.equipealpha.agis.model.Trabalho;
 import org.equipealpha.agis.model.Turma;
@@ -64,6 +65,7 @@ public class InterfaceCadastroTrabalho extends InterfaceBase {
     private JButton btnCadastroTrabalho;
     private JComboBox comboTurmaCadastroTrabalho;
     private JComboBox comboEscolaCadastroTrabalho;
+    private GerenciamentoEscolar gerenciamentoEscolar = new GerenciamentoEscolar();
 
     public InterfaceCadastroTrabalho() {
         addConteudo();
@@ -228,6 +230,8 @@ public class InterfaceCadastroTrabalho extends InterfaceBase {
                 }
 
                 trabalhoDAO.create(trabalho);
+                
+                gerenciamentoEscolar.criarPainelProva(textoNomeCadastroTrabalho.getText(), dataAplic, nomeEscola, nomeTurma)
             }
         });
 

@@ -3,16 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/nilbe/OneDrive%20-%20Fatec%20Centro%20Paula%20Souza/Fatec/Git/Agis%202/Agis/ProjetoAgis/src/org/equipealpha/agis/DAO/ProvaDAO.java</file>
-            <file>file:/C:/Users/nilbe/OneDrive%20-%20Fatec%20Centro%20Paula%20Souza/Fatec/Git/Agis%202/Agis/ProjetoAgis/src/org/equipealpha/agis/view/InterfaceCadastroProva.java</file>
-            <file>file:/C:/Users/nilbe/OneDrive%20-%20Fatec%20Centro%20Paula%20Souza/Fatec/Git/Agis%202/Agis/ProjetoAgis/src/org/equipealpha/agis/DAO/AlunoDAO.java</file>
-            <file>file:/C:/Users/nilbe/OneDrive%20-%20Fatec%20Centro%20Paula%20Souza/Fatec/Git/Agis%202/Agis/ProjetoAgis/src/org/equipealpha/agis/view/CadastroAluno.java</file>
+            <file>file:/C:/Users/nilbe/OneDrive%20-%20Fatec%20Centro%20Paula%20Souza/Fatec/Git/Agis%202/Agis/ProjetoAgis/src/org/equipealpha/agis/DAO/TarefaDAO.java</file>
+            <file>file:/C:/Users/nilbe/OneDrive%20-%20Fatec%20Centro%20Paula%20Souza/Fatec/Git/Agis%202/Agis/ProjetoAgis/src/org/equipealpha/agis/model/Tarefa.java</file>
+            <file>file:/C:/Users/nilbe/OneDrive%20-%20Fatec%20Centro%20Paula%20Souza/Fatec/Git/Agis%202/Agis/ProjetoAgis/src/org/equipealpha/agis/view/InterfaceCadastroTarefa.java</file>
+            <file>file:/C:/Users/nilbe/OneDrive%20-%20Fatec%20Centro%20Paula%20Souza/Fatec/Git/Agis%202/Agis/ProjetoAgis/src/org/equipealpha/agis/view/InterfaceCadastroTrabalho.java</file>
+            <file>file:/C:/Users/nilbe/OneDrive%20-%20Fatec%20Centro%20Paula%20Souza/Fatec/Git/Agis%202/Agis/ProjetoAgis/src/org/equipealpha/agis/model/Trabalho.java</file>
+            <file>file:/C:/Users/nilbe/OneDrive%20-%20Fatec%20Centro%20Paula%20Souza/Fatec/Git/Agis%202/Agis/ProjetoAgis/src/org/equipealpha/agis/DAO/TrabalhoDAO.java</file>
             <file>file:/C:/Users/nilbe/OneDrive%20-%20Fatec%20Centro%20Paula%20Souza/Fatec/Git/Agis%202/Agis/ProjetoAgis/src/org/equipealpha/agis/controller/GerenciamentoEscolar.java</file>
-=======
-            <file>file:/C:/Users/natan/OneDrive/Área%20de%20Trabalho/Faculdade/API/Agis/ProjetoAgis/src/org/equipealpha/agis/view/CadastroAluno.java</file>
-            <file>file:/C:/Users/natan/OneDrive/Área%20de%20Trabalho/Faculdade/API/Agis/ProjetoAgis/src/org/equipealpha/agis/main/Main.java</file>
->>>>>>> 22c4da69a08df4fad31c504d27f22bf13a00a910
         </group>
     </open-files>
 </project-private>
