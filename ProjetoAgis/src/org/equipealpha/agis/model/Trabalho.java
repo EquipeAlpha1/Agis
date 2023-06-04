@@ -7,11 +7,12 @@ package org.equipealpha.agis.model;
 import java.time.LocalDate;
 
 public class Trabalho {
-    
+
     private int id_trabalho;
     private String nome;
     private LocalDate dataInicio;
     private LocalDate dataFim;
+    private int fk_Turma_id;
 
     public int getId_trabalho() {
         return id_trabalho;
@@ -44,5 +45,13 @@ public class Trabalho {
     public void setDataFim(LocalDate dataFim) {
         this.dataFim = dataFim;
     }
-    
+
+    public int getFk_Turma_id() {
+        return fk_Turma_id;
+    }
+
+    public void setFk_Turma_id(int fk_Turma_id) {
+        this.fk_Turma_id = fk_Turma_id;
+    }
+
 }

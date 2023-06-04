@@ -229,9 +229,20 @@ public class InterfaceCadastroTrabalho extends InterfaceBase {
                     trabalho.setDataFim(null);
                 }
 
+                // Obter a turma selecionada no JComboBox
+                String nomeTurma = (String) comboTurmaCadastroTrabalho.getSelectedItem();
+                Turma turma = obterTurmaPorNome(nomeTurma);
+
+                // Verificar se a turma foi encontrada e configurar a chave estrangeira
+                if (turma != null) {
+                    trabalho.setFk_Turma_id(turma.getId_turma());
+                } else {
+                    // Lógica para lidar com o caso em que a turma não foi encontrada
+                    JOptionPane.showMessageDialog(null, "Turma não encontrada. Verifique o nome e tente novamente.");
+                    return; // Encerrar o método caso a turma não seja encontrada
+                }
+
                 trabalhoDAO.create(trabalho);
-                
-                gerenciamentoEscolar.criarPainelProva(textoNomeCadastroTrabalho.getText(), dataAplic, nomeEscola, nomeTurma)
             }
         });
 

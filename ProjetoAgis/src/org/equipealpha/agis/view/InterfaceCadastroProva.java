@@ -12,9 +12,11 @@ import java.util.Date;
 import org.equipealpha.agis.DAO.EscolaDAO;
 import org.equipealpha.agis.DAO.ProvaDAO;
 import org.equipealpha.agis.DAO.TurmaDAO;
+import org.equipealpha.agis.controller.GerenciamentoEscolar;
 import org.equipealpha.agis.model.Escola;
 import org.equipealpha.agis.model.Prova;
 import org.equipealpha.agis.model.Turma;
+import java.time.format.DateTimeFormatter;
 
 public class InterfaceCadastroProva extends InterfaceBase {
 
@@ -61,6 +63,7 @@ public class InterfaceCadastroProva extends InterfaceBase {
     private JButton btnCadastroProva;
     private JComboBox comboTurmaCadastroProva;
     private JComboBox comboEscolaCadastroProva;
+    private GerenciamentoEscolar gerenciamentoEscolar = new GerenciamentoEscolar();
 
     public InterfaceCadastroProva() {
         addConteudo();
@@ -197,6 +200,19 @@ public class InterfaceCadastroProva extends InterfaceBase {
                     prova.setDataAplicacao(dataAplicacao);
                 } else {
                     prova.setDataAplicacao(null);
+                }
+
+                // Obter a turma selecionada no JComboBox
+                String nomeTurma = (String) comboTurmaCadastroProva.getSelectedItem();
+                Turma turma = obterTurmaPorNome(nomeTurma);
+
+                // Verificar se a turma foi encontrada e configurar a chave estrangeira
+                if (turma != null) {
+                    prova.setFk_Turma_id(turma.getId_turma());
+                } else {
+                    // Lógica para lidar com o caso em que a turma não foi encontrada
+                    JOptionPane.showMessageDialog(null, "Turma não encontrada. Verifique o nome e tente novamente.");
+                    return; // Encerrar o método caso a turma não seja encontrada
                 }
 
                 provaDAO.create(prova);

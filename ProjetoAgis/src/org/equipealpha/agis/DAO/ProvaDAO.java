@@ -31,7 +31,7 @@ public class ProvaDAO {
         try {
             conn = GerenciamentoEscolar.getConnection();
 
-            String sql = "INSERT INTO prova (nome, DataAplicacao) VALUES (?, ?)";
+            String sql = "INSERT INTO prova (nome, DataAplicacao, fk_Turma_id) VALUES (?, ?, ?)";
 
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, prova.getNome());
@@ -42,7 +42,9 @@ public class ProvaDAO {
             } else {
                 stmt.setNull(2, Types.DATE);
             }
-
+            
+            stmt.setInt(3, prova.getFk_Turma_id());
+            
             stmt.executeUpdate();
 
             JOptionPane.showMessageDialog(null, "Salvo com sucesso!");

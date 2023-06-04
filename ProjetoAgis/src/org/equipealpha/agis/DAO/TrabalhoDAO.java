@@ -31,7 +31,7 @@ public class TrabalhoDAO {
         try {
             conn = GerenciamentoEscolar.getConnection();
 
-            String sql = "INSERT INTO trabalho (nome, dataInicio, dataFim) VALUES (?, ?, ?)";
+            String sql = "INSERT INTO trabalho (nome, dataInicio, dataFim, fk_Turma_id) VALUES (?, ?, ?, ?)";
 
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, trabalho.getNome());
@@ -49,6 +49,8 @@ public class TrabalhoDAO {
             } else {
                 stmt.setNull(3, Types.DATE);
             }
+            
+            stmt.setInt(4, trabalho.getFk_Turma_id());
 
             stmt.executeUpdate();
 

@@ -227,6 +227,19 @@ public class InterfaceCadastroTarefa extends InterfaceBase {
                     tarefa.setDataFim(null);
                 }
 
+                // Obter a turma selecionada no JComboBox
+                String nomeTurma = (String) comboTurmaCadastroTarefa.getSelectedItem();
+                Turma turma = obterTurmaPorNome(nomeTurma);
+
+                // Verificar se a turma foi encontrada e configurar a chave estrangeira
+                if (turma != null) {
+                    tarefa.setFk_Turma_id(turma.getId_turma());
+                } else {
+                    // Lógica para lidar com o caso em que a turma não foi encontrada
+                    JOptionPane.showMessageDialog(null, "Turma não encontrada. Verifique o nome e tente novamente.");
+                    return; // Encerrar o método caso a turma não seja encontrada
+                }
+
                 tarefaDAO.create(tarefa);
             }
         });

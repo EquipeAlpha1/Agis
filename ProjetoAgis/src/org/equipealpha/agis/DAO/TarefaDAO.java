@@ -31,7 +31,7 @@ public class TarefaDAO {
         try {
             conn = GerenciamentoEscolar.getConnection();
 
-            String sql = "INSERT INTO tarefa (nome, dataInicio, dataFim) VALUES (?, ?, ?)";
+            String sql = "INSERT INTO tarefa (nome, dataInicio, dataFim, fk_Turma_id) VALUES (?, ?, ?, ?)";
 
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, tarefa.getNome());
@@ -49,6 +49,8 @@ public class TarefaDAO {
             } else {
                 stmt.setNull(3, Types.DATE);
             }
+            
+            stmt.setInt(4, tarefa.getFk_Turma_id());
 
             stmt.executeUpdate();
 

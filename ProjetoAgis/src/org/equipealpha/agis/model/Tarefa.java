@@ -3,11 +3,12 @@ package org.equipealpha.agis.model;
 import java.time.LocalDate;
 
 public class Tarefa {
-    
+
     private int id_tarefa;
     private String nome;
     private LocalDate dataInicio;
     private LocalDate dataFim;
+    private int fk_Turma_id;
 
     public int getId_tarefa() {
         return id_tarefa;
@@ -41,5 +42,12 @@ public class Tarefa {
         this.dataFim = dataFim;
     }
 
+    public int getFk_Turma_id() {
+        return fk_Turma_id;
+    }
+
+    public void setFk_Turma_id(int fk_Turma_id) {
+        this.fk_Turma_id = fk_Turma_id;
+    }
 
 }
