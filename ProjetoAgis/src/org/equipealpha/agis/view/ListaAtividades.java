@@ -11,7 +11,6 @@ public class ListaAtividades extends InterfaceBase {
     private JScrollPane painelScrollListaAtividades;
     //outros
     private GridBagConstraints constraints;
-    private PainelAtividade painelAtividade;
     private GerenciamentoEscolar gerenciamentoEscolar= new GerenciamentoEscolar();
 
     public ListaAtividades() {

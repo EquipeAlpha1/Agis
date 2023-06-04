@@ -29,14 +29,12 @@ import org.equipealpha.agis.model.Turma;
 import org.equipealpha.agis.view.CadastroAluno;
 import org.equipealpha.agis.view.CadastroEscola;
 import org.equipealpha.agis.view.CadastroTurma;
-import org.equipealpha.agis.view.InterfaceCadastroAtividade;
+import org.equipealpha.agis.view.InterfaceEstatistica;
 import org.equipealpha.agis.view.InterfaceCadastroProva;
 import org.equipealpha.agis.view.InterfaceCadastroTarefa;
 import org.equipealpha.agis.view.InterfaceCadastroTrabalho;
-import org.equipealpha.agis.view.InterfacePendencias;
 import org.equipealpha.agis.view.ListaAtividades;
 import org.equipealpha.agis.view.RoundedPanel;
-import org.equipealpha.agis.view.SelectTurma;
 
 public class GerenciamentoEscolar {
 
@@ -103,14 +101,14 @@ public class GerenciamentoEscolar {
     }
 
     //Classes
-    private SelectTurma enviarSelectTurma;
-    private ListaAtividades enviarInterfacePendencias;
+    private ListaAtividades exibirListaAtividades;
     private CadastroAluno enviarCadastroAluno;
     private CadastroEscola enviarCadastroEscola;
     private CadastroTurma enviarCadastroTurma;
     private InterfaceCadastroProva interfaceCadastroProva;
     private InterfaceCadastroTrabalho interfaceCadastroTrabalho;
     private InterfaceCadastroTarefa interfaceCadastroTarefa;
+    private InterfaceEstatistica interfaceEstatistica;
     private ArrayList<Aluno> alunos = new ArrayList<Aluno>();
     private ArrayList<Turma> turmas = new ArrayList<Turma>();
     private ArrayList<Escola> escolas = new ArrayList<Escola>();
@@ -120,15 +118,14 @@ public class GerenciamentoEscolar {
 
     //metodos BD
     //Metodos de exibicao de interfaces
-    public void exibirListaAtividades() {
-
-        enviarInterfacePendencias = new ListaAtividades();
-        enviarInterfacePendencias.setVisible(true);
+     public void exibirListaAtividades() {
+        exibirListaAtividades = new ListaAtividades();
+        exibirListaAtividades.setVisible(true);
     }
 
-    public void exibirInterfaceSelectTurma() {
-        enviarSelectTurma = new SelectTurma();
-        enviarSelectTurma.setVisible(true);
+    public void exibirInterfaceEstatistica() {
+        interfaceEstatistica = new InterfaceEstatistica();
+        interfaceEstatistica.setVisible(true);
     }
 
     public void exibirCadastroAluno() {
@@ -159,6 +156,93 @@ public class GerenciamentoEscolar {
     public void exibirCadastroTarefa() {
         interfaceCadastroTarefa = new InterfaceCadastroTarefa();
         interfaceCadastroTarefa.setVisible(true);
+    }
+
+    //Metodos de interacao entre as paginas
+    public void criarProva(String nome, LocalDate dataAplicacao, String nomeTurma) {
+        Prova prova = new Prova();
+        prova.setNome(nome);
+
+        // Formata a data no formato "dd/MM/yyyy"
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String formattedDate = dataAplicacao.format(formatter);
+        prova.setDataAplicacao(LocalDate.parse(formattedDate, formatter));
+
+      
+        ProvaDAO DAO = new ProvaDAO();
+        DAO.create(prova);
+        provas.add(prova);
+    }
+
+    public void criarTarefa(String nome, LocalDate dataInic, LocalDate dataFinal, String nomeTurma) {
+        Tarefa tarefa = new Tarefa();
+        tarefa.setNome(nome);
+        // Formata a data de início no formato "dd/MM/yyyy"
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String formattedDataInic = dataInic.format(formatter);
+        tarefa.setDataInicio(LocalDate.parse(formattedDataInic, formatter));
+
+        // Formata a data final no formato "dd/MM/yyyy"
+        String formattedDataFinal = dataFinal.format(formatter);
+        tarefa.setDataFim(LocalDate.parse(formattedDataFinal, formatter));
+
+      
+        TarefaDAO DAO = new TarefaDAO();
+        DAO.create(tarefa);
+        tarefas.add(tarefa);
+    }
+
+    public void criarTrabalho(String nome, LocalDate dataInic, LocalDate dataFinal, String nomeTurma) {
+        Trabalho trabalho = new Trabalho();
+        trabalho.setNome(nome);
+
+        // Formata a data de início no formato "dd/MM/yyyy"
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String formattedDataInic = dataInic.format(formatter);
+        trabalho.setDataInicio(LocalDate.parse(formattedDataInic, formatter));
+
+        // Formata a data final no formato "dd/MM/yyyy"
+        String formattedDataFinal = dataFinal.format(formatter);
+        trabalho.setDataFim(LocalDate.parse(formattedDataFinal, formatter));
+
+ 
+        TrabalhoDAO DAO = new TrabalhoDAO();
+        DAO.create(trabalho);
+        trabalhos.add(trabalho);
+    }
+
+    public void criarEscola(String nome) {
+        Escola e = new Escola();
+        e.setNome(nome);
+        EscolaDAO DAO = new EscolaDAO();
+        DAO.create(e);
+        escolas.add(e);
+    }
+
+    public void criarTurma(String nome, String nomeEscola) {
+        Turma t = new Turma();
+        t.setNome(nome);
+        for (Escola e : escolas) {
+            if (e.getNome().equals(nomeEscola)) {
+                t.setEscola(e);
+            }
+        }
+        TurmaDAO DAO = new TurmaDAO();
+        DAO.create(t);
+        turmas.add(t);
+    }
+
+    public void criarAluno(String nome, String nomeEscola, String nomeTurma) {
+        Aluno aluno = new Aluno();
+        aluno.setNome(nome);
+        for (Turma t : turmas) {
+            if (t.getNome().equals(nomeTurma)) {
+               // aluno.addTurma(t);
+            }
+        }
+        AlunoDAO DAO = new AlunoDAO();
+        DAO.create(aluno);
+        alunos.add(aluno);
     }
     
         public RoundedPanel criarPainelProva(String nomeProva, String dataAplic, String nomeEscola, String nomeTurma){
@@ -243,8 +327,6 @@ public class GerenciamentoEscolar {
 
         return painelProva;
     }
-        
-}
 
 
     //Metodos de interacao entre as paginas
@@ -445,3 +527,4 @@ public class GerenciamentoEscolar {
 //        DAO.create(aluno);
 //        alunos.add(aluno);
 //    }
+}
