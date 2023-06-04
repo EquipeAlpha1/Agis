@@ -5,6 +5,7 @@
         <group>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             <file>file:/C:/Users/nilbe/OneDrive%20-%20Fatec%20Centro%20Paula%20Souza/Fatec/Git/Agis%202/Agis/ProjetoAgis/src/org/equipealpha/agis/DAO/ProvaDAO.java</file>
             <file>file:/C:/Users/nilbe/OneDrive%20-%20Fatec%20Centro%20Paula%20Souza/Fatec/Git/Agis%202/Agis/ProjetoAgis/src/org/equipealpha/agis/view/InterfaceCadastroProva.java</file>
             <file>file:/C:/Users/nilbe/OneDrive%20-%20Fatec%20Centro%20Paula%20Souza/Fatec/Git/Agis%202/Agis/ProjetoAgis/src/org/equipealpha/agis/DAO/AlunoDAO.java</file>
@@ -19,6 +20,15 @@
             <file>file:/C:/Users/natan/OneDrive/Área%20de%20Trabalho/Faculdade/API/Agis/ProjetoAgis/src/org/equipealpha/agis/main/Main.java</file>
             <file>file:/C:/Users/natan/OneDrive/Área%20de%20Trabalho/Faculdade/API/Agis/ProjetoAgis/src/org/equipealpha/agis/view/ListaAtividades.java</file>
 >>>>>>> interfacesAtividades
+=======
+            <file>file:/C:/Users/nilbe/OneDrive%20-%20Fatec%20Centro%20Paula%20Souza/Fatec/Git/Agis%202/Agis/ProjetoAgis/src/org/equipealpha/agis/DAO/TarefaDAO.java</file>
+            <file>file:/C:/Users/nilbe/OneDrive%20-%20Fatec%20Centro%20Paula%20Souza/Fatec/Git/Agis%202/Agis/ProjetoAgis/src/org/equipealpha/agis/model/Tarefa.java</file>
+            <file>file:/C:/Users/nilbe/OneDrive%20-%20Fatec%20Centro%20Paula%20Souza/Fatec/Git/Agis%202/Agis/ProjetoAgis/src/org/equipealpha/agis/view/InterfaceCadastroTarefa.java</file>
+            <file>file:/C:/Users/nilbe/OneDrive%20-%20Fatec%20Centro%20Paula%20Souza/Fatec/Git/Agis%202/Agis/ProjetoAgis/src/org/equipealpha/agis/view/InterfaceCadastroTrabalho.java</file>
+            <file>file:/C:/Users/nilbe/OneDrive%20-%20Fatec%20Centro%20Paula%20Souza/Fatec/Git/Agis%202/Agis/ProjetoAgis/src/org/equipealpha/agis/model/Trabalho.java</file>
+            <file>file:/C:/Users/nilbe/OneDrive%20-%20Fatec%20Centro%20Paula%20Souza/Fatec/Git/Agis%202/Agis/ProjetoAgis/src/org/equipealpha/agis/DAO/TrabalhoDAO.java</file>
+            <file>file:/C:/Users/nilbe/OneDrive%20-%20Fatec%20Centro%20Paula%20Souza/Fatec/Git/Agis%202/Agis/ProjetoAgis/src/org/equipealpha/agis/controller/GerenciamentoEscolar.java</file>
+>>>>>>> 48d5dd02880a603b01cfb310c4f839d0a2b57379
         </group>
     </open-files>
 </project-private>
