@@ -161,8 +161,6 @@ public class GerenciamentoEscolar {
         interfaceCadastroTarefa.setVisible(true);
     }
 
-<<<<<<< HEAD
-=======
     //Metodos de interacao entre as paginas
     public void criarProva(String nome, LocalDate dataAplicacao, String nomeTurma) {
         Prova prova = new Prova();
@@ -173,11 +171,7 @@ public class GerenciamentoEscolar {
         String formattedDate = dataAplicacao.format(formatter);
         prova.setDataAplicacao(LocalDate.parse(formattedDate, formatter));
 
-        for (Turma t : turmas) {
-            if (t.getNome().equals(nomeTurma)) {
-                prova.setTurma(t);
-            }
-        }
+      
         ProvaDAO DAO = new ProvaDAO();
         DAO.create(prova);
         provas.add(prova);
@@ -195,11 +189,7 @@ public class GerenciamentoEscolar {
         String formattedDataFinal = dataFinal.format(formatter);
         tarefa.setDataFim(LocalDate.parse(formattedDataFinal, formatter));
 
-        for (Turma t : turmas) {
-            if (t.getNome().equals(nomeTurma)) {
-                tarefa.setTurma(t);
-            }
-        }
+      
         TarefaDAO DAO = new TarefaDAO();
         DAO.create(tarefa);
         tarefas.add(tarefa);
@@ -218,11 +208,7 @@ public class GerenciamentoEscolar {
         String formattedDataFinal = dataFinal.format(formatter);
         trabalho.setDataFim(LocalDate.parse(formattedDataFinal, formatter));
 
-        for (Turma t : turmas) {
-            if (t.getNome().equals(nomeTurma)) {
-                trabalho.setTurma(t);
-            }
-        }
+ 
         TrabalhoDAO DAO = new TrabalhoDAO();
         DAO.create(trabalho);
         trabalhos.add(trabalho);
@@ -345,8 +331,6 @@ public class GerenciamentoEscolar {
         return painelProva;
     }
     
->>>>>>> 22c4da69a08df4fad31c504d27f22bf13a00a910
-}
 
 //    //Metodos de interacao entre as paginas
 //    public void criarProva(String nome, LocalDate dataAplicacao, String nomeTurma) {
@@ -446,3 +430,4 @@ public class GerenciamentoEscolar {
 //        DAO.create(aluno);
 //        alunos.add(aluno);
 //    }
+}
