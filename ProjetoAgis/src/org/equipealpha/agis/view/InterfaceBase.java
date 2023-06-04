@@ -114,9 +114,6 @@ public abstract class InterfaceBase extends JFrame implements ActionListener {
         painelCadastroSidebar.add(labelTextoCadastro, BorderLayout.EAST);
         painelCadastroSidebar.add(opcoesCadastro);
         sidebar.add(painelCadastroSidebar);
-        
-        
-            
 
 
 //customizando estatisticas sidebar
@@ -134,7 +131,7 @@ public abstract class InterfaceBase extends JFrame implements ActionListener {
         labelTextoEstatisticas.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent e) {
                 setVisible(false);
-                gerenciamentoescolar.exibirInterfaceSelectTurma();
+                gerenciamentoescolar.exibirInterfaceEstatistica();
                 
             }
         });

@@ -231,7 +231,7 @@ public class InterfaceCadastroTrabalho extends InterfaceBase {
 
                 trabalhoDAO.create(trabalho);
                 
-                gerenciamentoEscolar.criarPainelProva(textoNomeCadastroTrabalho.getText(), dataAplic, nomeEscola, nomeTurma)
+               // gerenciamentoEscolar.criarPainelProva(textoNomeCadastroTrabalho.getText(), dataAplic, nomeEscola, nomeTurma)
             }
         });
 
