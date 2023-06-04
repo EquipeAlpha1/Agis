@@ -29,14 +29,12 @@ import org.equipealpha.agis.model.Turma;
 import org.equipealpha.agis.view.CadastroAluno;
 import org.equipealpha.agis.view.CadastroEscola;
 import org.equipealpha.agis.view.CadastroTurma;
-import org.equipealpha.agis.view.InterfaceCadastroAtividade;
+import org.equipealpha.agis.view.InterfaceEstatistica;
 import org.equipealpha.agis.view.InterfaceCadastroProva;
 import org.equipealpha.agis.view.InterfaceCadastroTarefa;
 import org.equipealpha.agis.view.InterfaceCadastroTrabalho;
-import org.equipealpha.agis.view.InterfacePendencias;
 import org.equipealpha.agis.view.ListaAtividades;
 import org.equipealpha.agis.view.RoundedPanel;
-import org.equipealpha.agis.view.SelectTurma;
 
 public class GerenciamentoEscolar {
 
@@ -103,14 +101,14 @@ public class GerenciamentoEscolar {
     }
 
     //Classes
-    private SelectTurma enviarSelectTurma;
-    private ListaAtividades enviarInterfacePendencias;
+    private ListaAtividades exibirListaAtividades;
     private CadastroAluno enviarCadastroAluno;
     private CadastroEscola enviarCadastroEscola;
     private CadastroTurma enviarCadastroTurma;
     private InterfaceCadastroProva interfaceCadastroProva;
     private InterfaceCadastroTrabalho interfaceCadastroTrabalho;
     private InterfaceCadastroTarefa interfaceCadastroTarefa;
+    private InterfaceEstatistica interfaceEstatistica;
     private ArrayList<Aluno> alunos = new ArrayList<Aluno>();
     private ArrayList<Turma> turmas = new ArrayList<Turma>();
     private ArrayList<Escola> escolas = new ArrayList<Escola>();
@@ -120,15 +118,14 @@ public class GerenciamentoEscolar {
 
     //metodos BD
     //Metodos de exibicao de interfaces
-    public void exibirListaAtividades() {
-
-        enviarInterfacePendencias = new ListaAtividades();
-        enviarInterfacePendencias.setVisible(true);
+     public void exibirListaAtividades() {
+        exibirListaAtividades = new ListaAtividades();
+        exibirListaAtividades.setVisible(true);
     }
 
-    public void exibirInterfaceSelectTurma() {
-        enviarSelectTurma = new SelectTurma();
-        enviarSelectTurma.setVisible(true);
+    public void exibirInterfaceEstatistica() {
+        interfaceEstatistica = new InterfaceEstatistica();
+        interfaceEstatistica.setVisible(true);
     }
 
     public void exibirCadastroAluno() {
